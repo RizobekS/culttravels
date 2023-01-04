@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load humanize %}
+
+{% block title %}{% trans "Tours"%}{% endblock title %}
+
+{% block content %}
+
+<div class="row-fluid mb-5">
+    <div class="bg-image"
+         style="background-image: url({% static 'home/img-core/bg-images/tours.webp' %});
+                height: 500px;">
+
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <p class="text-white mb-0 h1">{% translate 'Tours' %}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% block detail %}
+<div class="container">
+    <div class="row-fluid mt-5">
+        {% for list in list_tours %}
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="card_img ripple col-md-4">
+                    <a href="{% url 'tours_details' pk=list.pk %}" class="">
+                        {% if list.image_uz %}
+                        {% if LANGUAGE_CODE == 'en' and list.image %}
+                        <img src="{{ list.image.url }}" class="card_news_img img-fluid rounded-start lazy"
+                             alt="tours">
+                        {% elif LANGUAGE_CODE == 'ru' and list.image_ru %}
+                        <img src="{{ list.image_ru.url }}" class="card_news_img img-fluid rounded-start lazy"
+                             alt="tours">
+                        {% else %}
+                        <img src="{{ list.image_uz.url }}" class="card_news_img img-fluid rounded-start lazy"
+                             alt="tours">
+                        {% endif %}
+                        {% else %}
+                        <img src="{% static 'home/img-core/news_default.jpg' %}" class="card_news_img img-fluid rounded-start"
+                             alt="tours">
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title"><a href="{% url 'tours_details' pk=list.pk %}" class="">
+                                {% if LANGUAGE_CODE == 'en' %}
+                                {{ list.title_en|default_if_none:""|truncatechars:80 }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ list.title_ru|default_if_none:""|truncatechars:80 }}
+                                {% elif LANGUAGE_CODE == 'uz' %}
+                                {{ list.title_uz|default_if_none:""|truncatechars:80 }}
+                                {% endif %}
+                            </a></h5>
+                            <h5 class="card-title">{{ list.value|floatformat:0|intcomma }} UZS</h5>
+                        </div>
+                        <p class="card-text">
+                            {% if LANGUAGE_CODE == 'en' %}
+                            {{ list.description_en|default_if_none:""|safe|truncatechars:500 }}
+                            {% elif LANGUAGE_CODE == 'ru' %}
+                            {{ list.description_ru|default_if_none:""|safe|truncatechars:500 }}
+                            {% elif LANGUAGE_CODE == 'uz' %}
+                            {{ list.description_uz|default_if_none:""|safe|truncatechars:500 }}
+                            {% endif %}
+                        </p>
+                        <p class="card-text"><small class="text-muted">
+                            <a href="javascript:;" style="margin-right: 10px"><i class="far fa-calendar"></i> {{list.date}}</a>
+                            <a href="javascript:;"><i class="fas fa-eye"></i> {{ list.views }}</a>
+                        </small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- Pagination -->
+        {% if tours.has_other_pages %}
+        <nav aria-label="Culttravels paginator" class="mb-5 text-center">
+            <ul class="pagination pagination-circle">
+                {% if users.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ tours.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% for i in tours.paginator.page_range %}
+                    {% if tours.number == i %}
+                    <li class="page-item active"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                    {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if tours.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ tours.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock detail %}
+{% endblock content %}

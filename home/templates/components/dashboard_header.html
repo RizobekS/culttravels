@@ -1,0 +1,77 @@
+{% load static %}
+{% load i18n %}
+
+<header class="header header-page">
+    <div class="header-fixed">
+        <nav class="navbar navbar-expand-lg header-nav scroll-sticky">
+            <div class="container ">
+                <div class="navbar-header">
+                    <a id="mobile_btn" href="javascript:void(0);">
+                            <span class="bar-icon">
+                         <span></span>
+                      <span></span>
+                           <span></span>
+                         </span>
+                    </a>
+                    <a href="/" class="navbar-brand logo">
+                        <h4>CULTTRAVELS</h4>
+                    </a>
+                </div>
+                <div class="main-menu-wrapper">
+                    <div class="menu-header">
+                        <a class="menu-logo">
+                            <h4>CULTTRAVELS</h4>
+                        </a>
+                        <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+                    <ul class="main-nav">
+                        <li><a href="/">{% trans 'Home' %}</a></li>
+                        <li><a href="{% url 'tours' %}">{% translate "Tours" %}</a></li>
+                        <li><a href="/">{% translate "About us" %}</a></li>
+                        <li><a href="{% url 'contact' %}">{% translate "Contacts" %}</a></li>
+                        {#                            <li class="has-submenu active">#}
+                        {#                                <a href="#">O'zbekcha <i class="fas fa-chevron-down"></i></a>#}
+                        {#                                <ul class="submenu">#}
+                        {#                                    <li><a><img src="{% static 'home/flags/uz.png' %}" alt="uz" width="25"/>#}
+                        {#                                        O'zbekcha</a></li>#}
+                        {#                                    <li><a><img src="{% static 'home/flags/ru.png' %}" alt="uz" width="25"/> Русский</a>#}
+                        {#                                    </li>#}
+                        {#                                    <li><a><img src="{% static 'home/flags/us.png' %}" alt="uz" width="25"/> English</a>#}
+                        {#                                    </li>#}
+                        {#                                </ul>#}
+                        {#                            </li>#}
+                        <form class="lang_form" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                            <select name="language" id="language" onchange="this.form.submit();" required>
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% for lang in LANGUAGES %}
+                                    <option value="{{ lang.0 }}"
+                                            {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>{{ lang.1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                    </ul>
+                </div>
+                <ul class="nav header-navbar-rht">
+                    <li class="nav-item user-nav">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                            <span class="user-img">
+                            <img src="{% static 'dashboard/assets/img/user-img.png' %}" alt="">
+                            <span class="status online"></span>
+                            </span>
+                        </a>
+                        <div class="users dropdown-menu dropdown-menu-right" data-popper-placement="bottom-end">
+                            <a class="dropdown-item" href="{% url 'dashboard' %}"><i
+                                    class="fa-regular fa-user me-1"></i>{% translate 'My Profile' %}</a>
+                            <a class="dropdown-item" href="/logout-user/"><i
+                                    class="feather-log-out me-1"></i>{% translate 'Logout' %}</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

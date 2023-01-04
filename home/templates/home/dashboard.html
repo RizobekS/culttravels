@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+{% load humanize %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>{% translate 'My Profile' %}</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'dashboard/assets/img/favicon.svg' %}">
+
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'dashboard/assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/assets/plugins/fontawesome/css/all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/feather.css' %}">
+
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/style.css' %}">
+
+    <style>
+        .lang_form {
+            margin-top: 3%;
+        }
+
+        .lang_form > select {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #1563bf;
+            color: white;
+            border: none;
+        }
+
+        .lang_form > select > option {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div class="main-wrapper">
+
+    {% block dashboard_header %}{% include 'components/dashboard_header.html' %}{% endblock %}
+
+
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-3 col-lg-4 col-md-12 theiaStickySidebar">
+                    <div class="settings-widget dash-profile">
+                        <div class="settings-menu p-0">
+                            <div class="profile-bg">
+                                <h5>{% translate 'Customer' %}</h5>
+                                <img src="{% static 'dashboard/assets/img/instructor-profile-bg.jpg' %}" alt="">
+                                <div class="profile-img">
+                                    <a><img src="{% static 'dashboard/assets/img/user-img.png' %}" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="profile-group">
+                                <div class="profile-name text-center">
+                                    <h4><a>{{ request.user.first_name }} {{ request.user.last_name }}</a></h4>
+                                    <p>{{ request.user.phone }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings-widget account-settings">
+                        <div class="settings-menu">
+                            <h3>{% translate 'CONTROL PANEL' %}</h3>
+                            <ul>
+                                <li class="nav-item">
+                                    <a href="{% url 'dashboard' %}" class="nav-link">
+                                        <i class="feather-shopping-bag"></i> {% translate 'Payments' %}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-9 col-lg-8 col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="settings-widget">
+                                <div class="settings-inner-blk p-0">
+                                    <div class="sell-course-head comman-space">
+                                        <h3>{% translate 'Payments' %}</h3>
+                                        <p>{% translate 'Paid Tours' %}</p>
+                                    </div>
+                                    <div class="comman-space pb-0">
+                                        <div class="settings-tickets-blk course-instruct-blk table-responsive">
+
+                                        {% if mytours %}
+                                            <table class="table table-nowrap mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>{% translate 'Tour' %}</th>
+                                                    <th>{% translate 'Amount' %}</th>
+                                                    <th>{% translate 'Time' %}</th>
+                                                    <th>{% translate 'Date' %}</th>
+                                                    <th>{% translate 'Status' %}</th>
+                                                    <th>{% translate 'Action' %}</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for rs in mytours %}
+                                                    <tr>
+                                                        <td>{{ rs.id }}</td>
+                                                        <td class="instruct-orders-info">
+                                                            {% if LANGUAGE_CODE == 'en' %}
+                                                                <p><a href="{% url 'mytour-detail' rs.id %}">{{ rs.title_en }}</a></p>
+                                                            {% elif LANGUAGE_CODE == 'ru'%}
+                                                                 <p><a href="{% url 'mytour-detail' rs.id %}">{{ rs.title_ru }}</a></p>
+                                                            {% elif LANGUAGE_CODE == 'uz' %}
+                                                                <p><a href="{% url 'mytour-detail' rs.id %}">{{ rs.title_uz }}</a></p>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>{{ rs.value|floatformat:0|intcomma }} UZS</td>
+                                                        <td>{{ rs.payment_time }}</td>
+                                                        <td>{{ rs.payment_date }}</td>
+                                                        <td><span class="badge info-low">{% translate 'Paid' %}</span>
+                                                        </td>
+                                                        <td><a href="{% url 'invoice' rs.id %}"><i
+                                                                class="fa fa-eye"></i> {% translate 'View' %}</a></td>
+                                                    </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        {% else %}
+                                            <h3 style="text-align: center;">{% translate "There are no fees!" %}</h3>
+                                            <br>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script data-cfasync="false"
+        src="{% static 'dashboard/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+<script src="{% static 'dashboard/assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'dashboard/assets/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'dashboard/assets/plugins/feather/feather.min.js' %}"></script>
+
+<script src="{% static 'dashboard/assets/plugins/theia-sticky-sidebar/ResizeSensor.js' %}"></script>
+<script src="{% static 'dashboard/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js' %}"></script>
+
+<script src="{% static 'dashboard/assets/js/script.js' %}"></script>
+</body>
+
+</html>

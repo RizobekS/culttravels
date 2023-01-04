@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load humanize %}
+
+{% block content %}
+<!-- Carousel wrapper -->
+<section>
+    <div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+        <!-- Inner -->
+        <div class="carousel-inner">
+            <!-- Single item -->
+            <div class="carousel-item active">
+                <!--                <img src="{% static 'home/img-core/bg-images/1.webp' %}" class="d-block w-100"-->
+                <!--                     alt="Sunset Over the City"/>-->
+                <div class="bg-image"
+                     style="background-image: url({% static 'home/img-core/bg-images/1.webp' %}); height: 650px; top: 1;">
+
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <h1 class="text-white mb-5 d-block"><strong class="text-info">Culttravels</strong> —
+                                {% translate 'Discover a world you have never seen' %}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single item -->
+            <div class="carousel-item">
+                <div class="bg-image"
+                     style="background-image: url({% static 'home/img-core/bg-images/2.webp' %});
+                height: 650px; top: 1;">
+
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <h1 class="text-white mb-5 d-block"><strong class="text-info">Culttravels</strong> —
+                                {% translate 'Discover a world you have never seen' %}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single item -->
+            <div class="carousel-item">
+                <div class="bg-image"
+                     style="background-image: url({% static 'home/img-core/bg-images/3.webp' %});
+                height: 650px; top: 1;">
+
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <h1 class="text-white mb-5 d-block"><strong class="text-info">Culttravels</strong> —
+                                {% translate 'Discover a world you have never seen' %}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="carousel-item">
+                <div class="bg-image"
+                     style="background-image: url({% static 'home/img-core/bg-images/4.webp' %});
+                height: 650px; top: 1;">
+
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <h1 class="text-white mb-5 d-block"><strong class="text-info">Culttravels</strong> —
+                                {% translate 'Discover a world you have never seen' %}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="bg-image"
+                     style="background-image: url({% static 'home/img-core/bg-images/5.webp' %});
+                height: 650px; top: 1;">
+
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <h1 class="text-white mb-5 d-block"><strong class="text-info">Culttravels</strong> —
+                                {% translate 'Discover a world you have never seen' %}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="bg-image"
+                     style="background-image: url({% static 'home/img-core/bg-images/6.webp' %});
+                height: 650px; top: 1;">
+
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <h1 class="text-white mb-5 d-block"><strong class="text-info">Culttravels</strong> —
+                                {% translate 'Discover a world you have never seen' %}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Carousel wrapper -->
+<section class="container-fluid text-center">
+    <div class="mt-5"><h1>{% translate 'Explore With Culttravels' %}</h1></div>
+    <div class="line"></div>
+    <div class="row mb-5 overflow-hidden">
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-5 mb-lg-0 position-relative">
+            <i class="fas fa-map-marked text-info fa-5x mb-4"></i>
+            <h3>{% translate 'Weekend Trips' %}</h3>
+            <p>{% translate 'Tailor Made Itinerary' %}</p>
+            <div class="vr vr-blurry position-absolute my-0 h-100 d-none d-md-block top-0 end-0"></div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-5 mb-lg-0 position-relative">
+            <i class="fas fa-heart text-info fa-5x mb-4"></i>
+            <h3>{% translate 'Honeymoon Tours' %}</h3>
+            <p>{% translate 'Customer Satisfaction' %}</p>
+            <div class="vr vr-blurry position-absolute my-0 h-100 d-none d-md-block top-0 end-0"></div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0 position-relative">
+            <i class="fas fa-globe-europe text-info fa-5x mb-4"></i>
+            <h3>{% translate 'Corporate Trips' %}</h3>
+            <p>{% translate 'of Travel Association' %}</p>
+            <div class="vr vr-blurry position-absolute my-0 h-100 d-none d-md-block top-0 end-0"></div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0 position-relative">
+            <i class="fas fa-plane-departure text-info fa-5x mb-4"></i>
+            <h3>{% translate 'Customised Trips' %}</h3>
+            <p>{% translate 'Travel Expert' %}</p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container mb-5">
+        <div class="row-fluid mt-5">
+            <h2 class="text-center">{% translate "Tours" %}</h2>
+            <div class="line"></div>
+            {% for list in tours_home %}
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="card_img ripple col-md-4">
+                        <a href="{% url 'tours_details' pk=list.pk %}" class="">
+                            {% if list.image_uz %}
+                            {% if LANGUAGE_CODE == 'en' and list.image %}
+                            <img src="{{ list.image.url }}" class="card_news_img img-fluid rounded-start"
+                                 alt="tours">
+                            {% elif LANGUAGE_CODE == 'ru' and list.image_ru %}
+                            <img src="{{ list.image_ru.url }}" class="card_news_img img-fluid rounded-start"
+                                 alt="tours">
+                            {% else %}
+                            <img src="{{ list.image_uz.url }}" class="card_news_img img-fluid rounded-start"
+                                 alt="tours">
+                            {% endif %}
+                            {% else %}
+                            <img src="{% static 'home/img-core/bg-images/1.webp' %}"
+                                 class="card_news_img img-fluid rounded-start"
+                                 alt="tours">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title"><a href="{% url 'tours_details' pk=list.pk %}" class="">
+                                    {% if LANGUAGE_CODE == 'en' %}
+                                    {{ list.title_en|default_if_none:""|truncatechars:80 }}
+                                    {% elif LANGUAGE_CODE == 'ru' %}
+                                    {{ list.title_ru|default_if_none:""|truncatechars:80 }}
+                                    {% elif LANGUAGE_CODE == 'uz' %}
+                                    {{ list.title_uz|default_if_none:""|truncatechars:80 }}
+                                    {% endif %}
+
+                                </a></h5>
+                                <h5 class="card-title">{{ list.value|floatformat:0|intcomma }} UZS</h5>
+                            </div>
+                            <p class="card-text">
+                                {% if LANGUAGE_CODE == 'en' %}
+                                {{ list.description_en|default_if_none:""|safe|truncatechars:500 }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ list.description_ru|default_if_none:""|safe|truncatechars:500 }}
+                                {% elif LANGUAGE_CODE == 'uz' %}
+                                {{ list.description_uz|default_if_none:""|safe|truncatechars:500 }}
+                                {% endif %}
+                            </p>
+                            <p class="card-text"><small class="text-muted">
+                                <a href="#!" style="margin-right: 10px"><i class="far fa-calendar"></i>
+                                    {{list.date}}</a>
+                                <a href="#!"><i class="fas fa-eye"></i> {{ list.views }}</a>
+                            </small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <a href="{% url 'tours' %}">
+                <div class="btn btn-info bg-gradient">{% translate 'All tours' %}</div>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

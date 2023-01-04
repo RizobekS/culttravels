@@ -1,0 +1,272 @@
+{% extends 'home/tours.html' %}
+{% load static i18n %}
+{% load humanize %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<!--Website page title-->
+{% block title %}
+    {% get_current_language as LANGUAGE_CODE %}
+    {% if LANGUAGE_CODE == 'en' %}
+        {{ detail.title_en|default_if_none:"" }}
+    {% elif LANGUAGE_CODE == 'ru' %}
+        {{ detail.title_ru|default_if_none:"" }}
+    {% elif LANGUAGE_CODE == 'uz' %}
+        {{ detail.title_uz|default_if_none:"" }}
+    {% endif %}
+{% endblock title %}
+
+<!--Facebook and Telegram title preview-->
+{% block og_title %}
+    {% get_current_language as LANGUAGE_CODE %}
+    {% if LANGUAGE_CODE == 'en' %}
+        {{ detail.title_en|default_if_none:"" }}
+    {% elif LANGUAGE_CODE == 'ru' %}
+        {{ detail.title_ru|default_if_none:"" }}
+    {% elif LANGUAGE_CODE == 'uz' %}
+        {{ detail.title_uz|default_if_none:"" }}
+    {% endif %}
+{% endblock og_title %}
+
+<!--Facebook and Telegram description preview-->
+{% block description %}
+    {% get_current_language as LANGUAGE_CODE %}
+    {% if LANGUAGE_CODE == 'en' %}
+        {{ detail.description_en|default_if_none:"" }}
+    {% elif LANGUAGE_CODE == 'ru' %}
+        {{ detail.description_ru|default_if_none:"" }}
+    {% elif LANGUAGE_CODE == 'uz' %}
+        {{ detail.description_uz|default_if_none:"" }}
+    {% endif %}
+{% endblock description %}
+
+<!--Facebook display preview-->
+{% block image %}
+    {% get_current_language as LANGUAGE_CODE %}
+    {% if LANGUAGE_CODE == 'en' and detail.image %}
+        {{ request.get_host }}/media/{{ detail.image }}
+    {% elif LANGUAGE_CODE == 'ru' and detail.image_ru %}
+        {{ request.get_host }}/media/{{ detail.image_ru }}
+    {% else %}
+        {{ request.get_host }}/media/{{ detail.image_uz }}
+    {% endif %}
+{% endblock image %}
+
+<!--Telegram display preview-->
+{% block telegram_image %}
+    {% get_current_language as LANGUAGE_CODE %}
+    {% if LANGUAGE_CODE == 'en' and detail.image %}
+        {{ request.get_host }}/media/{{ detail.image }}
+    {% elif LANGUAGE_CODE == 'ru' and detail.image_ru %}
+        {{ request.get_host }}/media/{{ detail.image_ru }}
+    {% else %}
+        {{ request.get_host }}/media/{{ detail.image_uz }}
+    {% endif %}
+{% endblock telegram_image %}
+
+{% block detail %}
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{% translate 'Payment' %}</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <h5 style="text-align: center; color: black;">{% translate 'Select the payment type' %}</h5>
+                    <br>
+                    <a target="_blank" href="/click_generate_url/{{ detail.value|floatformat:0 }}/{{ detail.id }}"><img style="border: 1px solid darkgray; margin: 5px;" width="40%" src="{% static 'home/systems/click.png' %}" alt="payme"></a>
+                    <a target="_blank" href="/payme_generate_url/{{ detail.value|floatformat:0 }}/{{ detail.id }}"><img style="border: 1px solid darkgray; margin: 5px;" width="42%" src="{% static 'home/systems/payme.png' %}" alt="payme"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{#    {% for rs in object %}#}
+{#        <a href="{% url 'id' rs.ix %}"></a>#}
+{#    {% endfor %}#}
+
+    <!-- ****** Blog Area Start ******* -->
+    <section class="dento--blog-area">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12 col-lg-12 mb-5">
+                    <!-- Blog Details Area -->
+                    <div class="blog-details-area">
+                        <div class="img_news text-center mb-5">
+                            {% if detail.image %}
+                                {% if LANGUAGE_CODE == 'en' and detail.image %}
+                                    <img src="{{ detail.image.url }}" class="lazy img-fluid rounded hover-shadow"
+                                         alt="Culttravels image">
+                                {% elif LANGUAGE_CODE == 'ru' and detail.image_ru %}
+                                    <img src="{{ detail.image_ru.url }}" class="lazy img-fluid rounded hover-shadow"
+                                         alt="Culttravels image">
+                                {% else %}
+                                    <img src="{{ detail.image_uz.url }}" class="lazy img-fluid rounded hover-shadow"
+                                         alt="Culttravels image">
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h2 class="post-title">
+                                {% if LANGUAGE_CODE == 'en' %}
+                                    {{ detail.title_en|default_if_none:"" }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                    {{ detail.title_ru|default_if_none:"" }}
+                                {% elif LANGUAGE_CODE == 'uz' %}
+                                    {{ detail.title_uz|default_if_none:"" }}
+                                {% endif %}
+
+                            </h2>
+                            <h2>{{ detail.value|floatformat:0|intcomma }} UZS</h2>
+                        </div>
+                        <p>
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ detail.description_en|safe|default_if_none:"" }}
+                            {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ detail.description_ru|safe|default_if_none:"" }}
+                            {% elif LANGUAGE_CODE == 'uz' %}
+                                {{ detail.description_uz|safe|default_if_none:"" }}
+                            {% endif %}
+                        </p>
+                        <div class="post-meta">
+                            <a href="#!"><i class="far fa-calendar  "></i> {{ detail.date }}</a>
+                            <a href="#!"><i class="fas fa-eye"></i> {{ detail.views }}</a>
+                        </div>
+                        <div class="d-flex justify-content-center mt-3 mb-5">
+                            <div class="order col-6 col-md-4 col-lg-2">
+                                <a data-mdb-toggle="modal" data-mdb-target="#exampleModal" class="bg-info btn" id="order">{% translate 'Buy' %}</a>
+                            </div>
+                        </div>
+                        <div class="img_news text-center">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {% if detail.extra_img_one %}
+                                    <img id="news-image" class="lazy img-fluid rounded hover-shadow"
+                                         src="{{ detail.extra_img_one.url }}"
+                                         alt="extra image">{% endif %}
+                                {% if detail.extra_img_two %}
+                                    <img id="news-image" class="lazy img-fluid rounded hover-shadow"
+                                         src="{{ detail.extra_img_two.url }}"
+                                         alt="extra image">{% endif %}
+                                {% if detail.extra_img_three %}
+                                    <img id="news-image" class="lazy img-fluid rounded hover-shadow"
+                                         src="{{ detail.extra_img_three.url }}"
+                                         alt="extra image">{% endif %}
+                            {% elif LANGUAGE_CODE == 'ru' %}
+                                {% if detail.extra_img_one %}
+                                    <img id="news-image" class="lazy img-fluid rounded hover-shadow"
+                                         src="{{ detail.extra_img_one.url }}"
+                                         alt="extra image">{% endif %}
+                                {% if detail.extra_img_two %}
+                                    <img id="news-image" class="lazy img-fluid rounded hover-shadow"
+                                         src="{{ detail.extra_img_two.url }}"
+                                         alt="extra image">{% endif %}
+                                {% if detail.extra_img_three %}
+                                    <img id="news-image" class="lazy img-fluid rounded hover-shadow"
+                                         src="{{ detail.extra_img_three.url }}"
+                                         alt="extra image">{% endif %}
+                            {% else %}
+                                {% if detail.extra_img_one %}
+                                    <img id="news-image" class="lazy img-fluid rounded hover-shadow"
+                                         src="{{ detail.extra_img_one.url }}"
+                                         alt="extra image">{% endif %}
+                                {% if detail.extra_img_two %}
+                                    <img id="news-image" class="lazy img-fluid rounded hover-shadow"
+                                         src="{{ detail.extra_img_two.url }}"
+                                         alt="extra image">{% endif %}
+                                {% if detail.extra_img_three %}
+                                    <img id="news-image" class="lazy img-fluid rounded hover-shadow"
+                                         src="{{ detail.extra_img_three.url }}"
+                                         alt="extra image">{% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <h2 class="post-title text-center">
+                        {% if LANGUAGE_CODE == 'en' %}
+                            {{ detail.video_title|default_if_none:"" }}
+                        {% elif LANGUAGE_CODE == 'ru' %}
+                            {{ detail.video_title_ru|default_if_none:"" }}
+                        {% elif LANGUAGE_CODE == 'uz' %}
+                            {{ detail.video_title_uz|default_if_none:"" }}
+                        {% endif %}
+                    </h2>
+                    <div class="video_news text-center rounded">
+                        {% if detail.video and LANGUAGE_CODE == 'en' %}
+                            <video onclick="play(event)" src="{{ detail.video.url }}" id="video"
+                                   width="100%" height="600px"
+                                   style="margin-bottom: 30px"></video>
+                            <div class="controls">
+                                <button onclick="play(event)"><i class="fa fa-play"></i><i class="fa fa-pause"></i>
+                                </button>
+                                <button onclick="rewind(event)"><i class="fa fa-fast-backward"></i></button>
+                                <div class="timeline">
+                                    <div class="bar">
+                                        <div class="inner"></div>
+                                    </div>
+                                </div>
+                                <button onclick="forward(event)"><i class="fa fa-fast-forward"></i></button>
+                                <button onclick="fullScreen(event)"><i class="fa fa-expand"></i></button>
+                                <button onclick="download(event)"><i class="fa fa-cloud-download"></i></button>
+                            </div>
+                        {% elif detail.video_uz and LANGUAGE_CODE == 'uz' %}
+                            <video onclick="play(event)" src="{{ detail.video_uz.url }}" id="video"
+                                   width="100%" height="600px"
+                                   style="margin-bottom: 30px"></video>
+                            <div class="controls">
+                                <button onclick="play(event)"><i class="fa fa-play"></i><i class="fa fa-pause"></i>
+                                </button>
+                                <button onclick="rewind(event)"><i class="fa fa-fast-backward"></i></button>
+                                <div class="timeline">
+                                    <div class="bar">
+                                        <div class="inner"></div>
+                                    </div>
+                                </div>
+                                <button onclick="forward(event)"><i class="fa fa-fast-forward"></i></button>
+                                <button onclick="fullScreen(event)"><i class="fa fa-expand"></i></button>
+                                <button onclick="download(event)"><i class="fa fa-cloud-download"></i></button>
+                            </div>
+                        {% elif detail.video_ru and LANGUAGE_CODE == 'ru' %}
+                            <video onclick="play(event)" src="{{ detail.video_ru.url }}" id="video"
+                                   width="100%" height="600px"
+                                   style="margin-bottom: 30px"></video>
+                            <div class="controls">
+                                <button onclick="play(event)"><i class="fa fa-play"></i><i class="fa fa-pause"></i>
+                                </button>
+                                <button onclick="rewind(event)"><i class="fa fa-fast-backward"></i></button>
+                                <div class="timeline">
+                                    <div class="bar">
+                                        <div class="inner"></div>
+                                    </div>
+                                </div>
+                                <button onclick="forward(event)"><i class="fa fa-fast-forward"></i></button>
+                                <button onclick="fullScreen(event)"><i class="fa fa-expand"></i></button>
+                                <button onclick="download(event)"><i class="fa fa-cloud-download"></i></button>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="d-flex justify-content-center mt-3 mb-5">
+                        <div class="order col-6 col-md-4 col-lg-2">
+                            <a data-mdb-toggle="modal" data-mdb-target="#exampleModal" class="bg-info btn" id="order">{% translate 'Buy' %}</a>
+                        </div>
+                    </div>
+
+                    <!-- Post Share  -->
+                    <div class="post-share-area mb-3 d-flex justify-content-evenly">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"
+                           class="facebook" target="_blank"><i
+                                class="fab fa-facebook fa-lg"></i> {% translate "Share" %}</a>
+                        <a href="https://telegram.me/share/url?url={{ request.build_absolute_uri }}" target="_blank"><i
+                                class="fab fa-telegram fa-lg"></i> {% translate "Send" %}</a>
+                        <a href="https://instagram.com/?url={{ request.build_absolute_uri }}" target="_blank"
+                           class="tweet"><i
+                                class="fab fa-instagram  fa-lg"></i> {% translate "Share" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ****** Blog Area End ******* -->
+    <script src="{% static '/home/js/video_controls.js' %}"></script>
+{% endblock detail %}

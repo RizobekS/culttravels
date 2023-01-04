@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-04 13:08+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\templates\base.html:41 .\templates\components\_footer.html:55
+#: .\templates\components\dashboard_header.html:31
+#: .\templates\home\home.html:139 .\templates\home\tours.html:6
+#: .\templates\home\tours.html:17
+msgid "Tours"
+msgstr "Туры"
+
+#: .\templates\base.html:42 .\templates\components\_footer.html:58
+#: .\templates\components\dashboard_header.html:32
+msgid "About us"
+msgstr "О нас"
+
+#: .\templates\base.html:43 .\templates\components\_footer.html:61
+#: .\templates\components\_footer.html:97
+#: .\templates\components\dashboard_header.html:33
+#: .\templates\home\contact.html:4 .\templates\home\contact.html:24
+msgid "Contacts"
+msgstr "Контакты"
+
+#: .\templates\base.html:44 .\templates\components\_footer.html:64
+#: .\templates\home\faq.html:5 .\templates\home\faq.html:16
+msgid "FAQ"
+msgstr "Часто задаваемые вопросы"
+
+#: .\templates\base.html:69 .\templates\registration\login.html:9
+#: .\templates\registration\login.html:106
+#: .\templates\registration\login.html:118
+#: .\templates\registration\register.html:134
+msgid "Login"
+msgstr "Вход"
+
+#: .\templates\components\_footer.html:12
+msgid "Join us in social networks:"
+msgstr "Присоединяйтесь к нам в социальных сетях:"
+
+#: .\templates\components\_footer.html:52
+msgid "Links"
+msgstr "Ссылки"
+
+#: .\templates\components\_footer.html:72
+msgid "Opening hours"
+msgstr "Часы работы"
+
+#: .\templates\components\_footer.html:78
+msgid "Mon-Fri"
+msgstr "Пн-Пт"
+
+#: .\templates\components\_footer.html:82
+msgid "Sat"
+msgstr "Сб"
+
+#: .\templates\components\_footer.html:83
+#: .\templates\components\_footer.html:87
+msgid "Closed"
+msgstr "Закрыто"
+
+#: .\templates\components\_footer.html:86
+msgid "Sun"
+msgstr "Вс"
+
+#: .\templates\components\_footer.html:101 .\templates\home\contact.html:58
+msgid "4 Chilanzar Ave, Tashkent 100115"
+msgstr "4 улица Чиланзар, Ташкент 100115"
+
+#: .\templates\components\dashboard_header.html:30
+msgid "Home"
+msgstr "Главный"
+
+#: .\templates\components\dashboard_header.html:68
+#: .\templates\home\dashboard.html:12
+msgid "My Profile"
+msgstr "Мой Профиль"
+
+#: .\templates\components\dashboard_header.html:70
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\templates\home\contact.html:39
+msgid "thank you very much for your message! We will contact you shortly!"
+msgstr " большое спасибо за ваше сообщение! Мы скоро с Вами свяжемся!"
+
+#: .\templates\home\contact.html:44
+msgid "Ooops, something went wrong!"
+msgstr "Упс, что-то пошло не так!"
+
+#: .\templates\home\contact.html:57
+msgid "Address"
+msgstr "Адрес"
+
+#: .\templates\home\contact.html:60
+msgid "Phone"
+msgstr "Телефон"
+
+#: .\templates\home\contact.html:64 .\templates\registration\register.html:123
+#: .\templates\registration\register.html:124
+msgid "Email"
+msgstr "Адрес электронной почты"
+
+#: .\templates\home\contact.html:74
+msgid "Get In Touch"
+msgstr "Связаться"
+
+#: .\templates\home\contact.html:83
+msgid "Your Name"
+msgstr "Имя"
+
+#: .\templates\home\contact.html:89
+msgid "Your Email"
+msgstr "Электронная почта"
+
+#: .\templates\home\contact.html:94
+msgid "Your Phone"
+msgstr "Телефон"
+
+#: .\templates\home\contact.html:100
+msgid "Your Message"
+msgstr "Сообщение"
+
+#: .\templates\home\contact.html:104
+msgid "Send Message"
+msgstr "Отправить"
+
+#: .\templates\home\dashboard.html:62 .\templates\home\mytour_detail.html:61
+msgid "Customer"
+msgstr "Клиент"
+
+#: .\templates\home\dashboard.html:78 .\templates\home\mytour_detail.html:77
+msgid "CONTROL PANEL"
+msgstr "ПАНЕЛЬ УПРАВЛЕНИЯ"
+
+#: .\templates\home\dashboard.html:82 .\templates\home\dashboard.html:97
+#: .\templates\home\mytour_detail.html:81
+msgid "Payments"
+msgstr "Платежи"
+
+#: .\templates\home\dashboard.html:98
+msgid "Paid Tours"
+msgstr "Оплачиваемые поездки"
+
+#: .\templates\home\dashboard.html:108
+msgid "Tour"
+msgstr "Туры"
+
+#: .\templates\home\dashboard.html:109
+msgid "Amount"
+msgstr "Количество"
+
+#: .\templates\home\dashboard.html:110
+msgid "Time"
+msgstr "Время"
+
+#: .\templates\home\dashboard.html:111 .\templates\home\invoice_detail.html:70
+msgid "Date"
+msgstr "Дата"
+
+#: .\templates\home\dashboard.html:112 .\templates\home\invoice_detail.html:132
+msgid "Status"
+msgstr "Статус"
+
+#: .\templates\home\dashboard.html:113
+msgid "Action"
+msgstr "Действие"
+
+#: .\templates\home\dashboard.html:132 .\templates\home\invoice_detail.html:150
+msgid "Paid"
+msgstr "Оплачено"
+
+#: .\templates\home\dashboard.html:135
+msgid "View"
+msgstr "Действие"
+
+#: .\templates\home\dashboard.html:141
+msgid "There are no fees!"
+msgstr "Сборов нет!"
+
+#: .\templates\home\faq.html:25
+msgid "Frequently asked questions"
+msgstr "Часто задаваемые вопросы"
+
+#: .\templates\home\faq.html:45
+msgid "Didn't find your answer in the FAQ?"
+msgstr "Не нашли ответ здесь?"
+
+#: .\templates\home\faq.html:47
+msgid "Contact our support team"
+msgstr "Свяжитесь с нашей службой поддержки"
+
+#: .\templates\home\home.html:22 .\templates\home\home.html:37
+#: .\templates\home\home.html:52 .\templates\home\home.html:67
+#: .\templates\home\home.html:81 .\templates\home\home.html:95
+msgid "Discover a world you have never seen"
+msgstr "Откройте для себя мир, который вы ещё никогда не видели"
+
+#: .\templates\home\home.html:105
+msgid "Explore With Culttravels"
+msgstr "Исследуйте с TravelCults"
+
+#: .\templates\home\home.html:110
+msgid "Weekend Trips"
+msgstr "Поездки на выходные"
+
+#: .\templates\home\home.html:111
+msgid "Tailor Made Itinerary"
+msgstr "Индивидуальный маршрут"
+
+#: .\templates\home\home.html:117
+msgid "Honeymoon Tours"
+msgstr "Медовый месяц туры"
+
+#: .\templates\home\home.html:118
+msgid "Customer Satisfaction"
+msgstr "Удовлетворенность клиентов"
+
+#: .\templates\home\home.html:124
+msgid "Corporate Trips"
+msgstr "Корпоративные поездки"
+
+#: .\templates\home\home.html:125
+msgid "of Travel Association"
+msgstr "туристической ассоциации"
+
+#: .\templates\home\home.html:131
+msgid "Customised Trips"
+msgstr "Индивидуальные поездки"
+
+#: .\templates\home\home.html:132
+msgid "Travel Expert"
+msgstr "Эксперт по путешествиям"
+
+#: .\templates\home\home.html:200
+msgid "All tours"
+msgstr "Все туры"
+
+#: .\templates\home\invoice_detail.html:69
+msgid "Invoice"
+msgstr "Инвойс"
+
+#: .\templates\home\invoice_detail.html:80
+msgid "From"
+msgstr "От"
+
+#: .\templates\home\invoice_detail.html:90
+msgid "To"
+msgstr "Кому"
+
+#: .\templates\home\invoice_detail.html:106
+msgid "Payment type"
+msgstr "Способ оплаты"
+
+#: .\templates\home\invoice_detail.html:130
+msgid "Title"
+msgstr "Заголовок"
+
+#: .\templates\home\invoice_detail.html:131
+msgid "Price"
+msgstr "Цена"
+
+#: .\templates\home\mytour_detail.html:11
+msgid "My Tour"
+msgstr "Мой тур"
+
+#: .\templates\home\tours_details.html:72
+msgid "Payment"
+msgstr "Оплата"
+
+#: .\templates\home\tours_details.html:76
+msgid "Select the payment type"
+msgstr "Выберите тип оплаты"
+
+#: .\templates\home\tours_details.html:139
+#: .\templates\home\tours_details.html:251
+msgid "Buy"
+msgstr "Купить"
+
+#: .\templates\home\tours_details.html:259
+#: .\templates\home\tours_details.html:264
+msgid "Share"
+msgstr "Поделиться"
+
+#: .\templates\home\tours_details.html:261
+msgid "Send"
+msgstr "Отправить"
+
+#: .\templates\registration\login.html:110
+#: .\templates\registration\register.html:119
+msgid "Phone number"
+msgstr "Телефон номер"
+
+#: .\templates\registration\login.html:114
+#: .\templates\registration\login.html:115
+msgid "Password"
+msgstr "Пароль"
+
+#: .\templates\registration\login.html:117
+msgid "Don`t have an account?"
+msgstr "Нет аккаунта?"
+
+#: .\templates\registration\login.html:117
+#: .\templates\registration\register.html:9
+#: .\templates\registration\register.html:106
+#: .\templates\registration\register.html:135
+msgid "Register"
+msgstr "Регистрация"
+
+#: .\templates\registration\register.html:111
+msgid "First name"
+msgstr "Имя"
+
+#: .\templates\registration\register.html:112
+msgid "Your first name"
+msgstr "Ваше имя"
+
+#: .\templates\registration\register.html:115
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\templates\registration\register.html:116
+msgid "Your last name"
+msgstr "Ваше фамилия"
+
+#: .\templates\registration\register.html:127
+#: .\templates\registration\register.html:128
+msgid "New Password"
+msgstr "Новый пароль"
+
+#: .\templates\registration\register.html:131
+#: .\templates\registration\register.html:132
+msgid "Return Password"
+msgstr "Вернуть пароль"
+
+#: .\templates\registration\register.html:134
+msgid "Do you have an account?"
+msgstr "У вас есть аккаунт?"
+
+#: .\views.py:96 .\views.py:123
+msgid "Username or password is incorrect!"
+msgstr "Логин или пароль неверный!"
+
+#: .\views.py:119
+msgid ""
+"Successfully registered! Enter your registered phone number and password!"
+msgstr "Успешно зарегистрирован! Введите зарегистрированный номер телефона и пароль!"

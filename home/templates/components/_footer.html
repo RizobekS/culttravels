@@ -1,0 +1,131 @@
+{% load static %}
+{% load i18n %}
+
+<!-- Footer -->
+<footer class="text-center text-lg-start text-white" style="background-color: #65CCB8;">
+    <!-- Section: Social media -->
+    <section
+            class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>{% translate "Join us in social networks:" %}</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-telegram"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h4 class="text-center text-uppercase">
+                        <a href="{% url 'home' %}" class="">Culttravels</a>
+                    </h4>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        {% translate "Links" %}
+                    </h6>
+                    <p>
+                        <a href="{% url 'tours' %}" class="quick-link">{% translate "Tours" %}</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'home' %}" class="quick-link">{% translate "About us" %}</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'contact' %}" class="quick-link">{% translate "Contacts" %}</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'faq' %}" class="quick-link">{% translate "FAQ" %}</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Opening Hours -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase"><i class="fas fa-business-time fa-sm"></i>{% translate "Opening hours"%}
+                    </h6>
+
+
+                    <div class="col-12">
+                        <div class="opening-hours__child mt-4">
+                            <span>{% translate "Mon-Fri"%}</span>
+                            <span>9.00-18.00</span>
+                        </div>
+                        <div class="opening-hours__child mt-3">
+                            <span>{% translate "Sat" %}</span>
+                            <span>{% translate "Closed"%}</span>
+                        </div>
+                        <div class="opening-hours__child mt-3">
+                            <span>{% translate "Sun" %}</span>
+                            <span>{% translate "Closed"%}</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Opening Hours -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        {% translate "Contacts" %}
+                    </h6>
+                    <p>
+                        <a href="https://www.google.com/maps/place/Ministry+of+Economy/@41.3103208,69.2551131,17z/data=!3m1!4b1!4m5!3m4!1s0x38ae8b1a2e3db32f:0x52a6fae6f93d02da!8m2!3d41.3103083!4d69.25769"
+                           class="quick-link" target="_blank"><i class="fas fa-map-marker-alt"></i> <span>{% translate "4 Chilanzar Ave, Tashkent 100115" %}</span></a>
+                    </p>
+                    <p>
+                        <a href="mailto:info.culttravels@gmail.com" class="quick-link"><i
+                                class="fas fa-envelope me-3"></i>
+                            <span>info.culttravels@gmail.com</span></a>
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i>+99897 777-77-77</p>
+
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center col-12" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="text-center text-muted p-2">
+            © CULTTRAVELS
+            <script>document.write(new Date().getFullYear());</script>
+        </div>
+
+    </div>
+    <div class="text-center col-12 p-1 text-muted" style="background-color: rgba(0, 0, 0, 0.05);">
+            <span class="text-white">Powered by</span> <a href="https://t.me/WEBadiko" class="text-white">WEBadiko</a> <span class="text-white">&</span> <a href="https://www.origin-digital.uz" class="text-white">ORIGIN DIGITAL</a>
+        </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Culttravels</title>
+    <link rel="stylesheet" href="{% static '/home/css/style.css' %}">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link rel="stylesheet" href="{% static '/home/css/mdb.min.css' %}">
+
+</head>
+<body>
+
+<!--Manage header start-->
+<div class="container sticky-top">
+    <div class="text-uppercase">
+        <nav class="navbar navbar-expand-lg navbar-light rounded-5 blur blur-rounded top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4"
+             style="background-color: #65CCB8;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">Culttravels</a>
+                <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-evenly" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="quick-link" href="{% url 'tours' %}">{% translate "Tours" %}</a>
+                        <a class="quick-link" href="{% url 'home' %}">{% translate "About us" %}</a>
+                        <a class="quick-link" href="{% url 'contact' %}">{% translate "Contacts" %}</a>
+                        <a class="quick-link" href="{% url 'faq' %}">{% translate "FAQ" %}</a>
+                    </div>
+                    <div class="text-center col-sm-3 col-md-2 col-lg-2 col-3">
+                        <form id="lang_changer" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                            <select class="form-control form-control-sm text-center" name="language" id="language"
+                                    onchange="this.form.submit();" required>
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% for lang in LANGUAGES %}
+                                    <option value="{{ lang.0 }}"
+                                            {% if lang.0 == LANGUAGE_CODE %}
+                                            selected
+                                            {% endif %}>
+                                        {{ lang.1 }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center">
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url 'dashboard' %}" style="color: white;" ><i style="color: white;" class="fa fa-user"></i> {{ user.first_name }} {{ user.last_name }}</a>
+                    {% else %}
+                    <a style="color: white;" href="{% url 'login' %}"><i style="color: white;" class="fa fa-user"></i> {% translate 'Login' %}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!--Manage header end-->
+{% block content %} {% endblock content %}
+{% block register %} {% endblock register %}
+<button
+        type="button"
+        class="btn btn-info btn-floating btn-lg mb-5"
+        id="btn-back-to-top">
+    <i class="p-0 fas fa-arrow-up"></i>
+</button>
+
+{% include 'components/_footer.html' %}
+
+
+<!--<script src="{% static '/home/js/bootstrap.bundle.min.js' %}"></script>-->
+<script src="{% static '/home/js/mdb.min.js' %}"></script>
+<script src="{% static '/home/js/button_top.js' %}"></script>
+
+
+</body>
+</html>

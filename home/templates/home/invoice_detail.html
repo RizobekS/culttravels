@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+{% load humanize %}
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Chek - CultTravels</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'dashboard/assets/img/favicon.svg' %}">
+
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'dashboard/assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/assets/plugins/fontawesome/css/all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/feather.css' %}">
+
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/style.css' %}">
+
+    <style>
+        .lang_form {
+            margin-top: 3%;
+        }
+
+        .lang_form > select {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #1563bf;
+            color: white;
+            border: none;
+        }
+
+        .lang_form > select > option {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="main-wrapper">
+
+    {% block dashboard_header %}{% include 'components/dashboard_header.html' %}{% endblock %}
+
+    <div class="page-content">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-xl-9 col-md-8">
+                    <div class="settings-widget profile-details">
+                        <div class="settings-menu invoice-list-blk p-0 ">
+                            <div class="card pro-post border-0 mb-0">
+                                <div class="card-body">
+                                    <div class="invoice-item">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="invoice-logo">
+                                                    <h2 style="color: #b02a37;"><b>CULTTRAVELS</b></h2>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="invoice-details">
+                                                    <strong>{% translate 'Invoice' %}:</strong> #{{ mytour.id }} <br>
+                                                    <strong>{% translate 'Date' %}:</strong> {{ mytour.payment_date }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="invoice-item">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="invoice-info">
+                                                    <strong class="customer-text">{% translate 'From' %}</strong>
+                                                    <p class="invoice-details invoice-details-two">
+                                                        {{ mytour.user.first_name }} {{ mytour.user.last_name }} <br>
+                                                        {{ mytour.user.phone }}<br>
+                                                        {{ mytour.user.email }} <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="invoice-info invoice-info2">
+                                                    <strong class="customer-text">{% translate 'To' %}</strong>
+                                                    <p class="invoice-details">
+                                                        CULTTRAVELS <br>
+                                                        +998 91 120 77 77 <br>
+                                                        info@culttravels.com <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="invoice-item">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="invoice-info">
+                                                    <strong class="customer-text">{% translate 'Payment type' %}</strong>
+                                                    {% if mytour.payment_type == 'click' %}
+                                                        <img width="150"
+                                                             src="{% static 'home/systems/click_short.png' %}"
+                                                             alt="clickuz">
+                                                    {% elif mytour.payment_type == 'payme' %}
+                                                        <img width="150"
+                                                             src="{% static 'home/systems/payme_short.png' %}"
+                                                             alt="paymeuz">
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="invoice-item invoice-table-wrap">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="table-responsive">
+                                                    <table class="invoice-table table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>{% translate 'Title' %}</th>
+                                                            <th class="text-center">{% translate 'Price' %}</th>
+                                                            <th class="text-end">{% translate 'Status' %}</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>{{ mytour.id }}</td>
+                                                            {% if LANGUAGE_CODE == 'en' %}
+                                                                <td>{{ mytour.title_en }}</td>
+                                                            {% elif LANGUAGE_CODE == 'ru' %}
+                                                                <td>{{ mytour.title_ru }}</td>
+                                                            {% elif LANGUAGE_CODE == 'uz' %}
+                                                                <td>{{ mytour.title_uz }}</td>
+                                                            {% endif %}
+                                                            <td class="text-center">{{ mytour.value|floatformat:0|intcomma }}
+                                                                UZS
+                                                            </td>
+                                                            <td class="text-end">
+                                                                {% if mytour.payment_status == 'paid' %}
+                                                                    {% translate 'Paid' %} ✅{% else %}
+                                                                    {{ mytour.get_payment_status_display }}{% endif %}</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{#scripts#}
+<script data-cfasync="false"
+        src="{% static 'dashboard/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+<script src="{% static 'dashboard/assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'dashboard/assets/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'dashboard/assets/plugins/feather/feather.min.js' %}"></script>
+
+<script src="{% static 'dashboard/assets/plugins/theia-sticky-sidebar/ResizeSensor.js' %}"></script>
+<script src="{% static 'dashboard/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js' %}"></script>
+
+<script src="{% static 'dashboard/assets/js/script.js' %}"></script>
+</body>
+</html>
