@@ -171,7 +171,7 @@ def click_generate_url(request, amount, tour_id):
     generated_link = ClickUz.generate_url(
         order_id=transaction_id,
         amount=price,
-        return_url='http://127.0.0.1:8000/dashboard/'
+        return_url='http://www.culttravels.com/dashboard/'
     )
     return redirect(generated_link)
 
