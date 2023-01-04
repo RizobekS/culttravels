@@ -40,7 +40,7 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                     <h4 class="text-center text-uppercase">
-                        <a href="{% url 'home' %}" class="">Culttravels</a>
+                        <a class="" href="{% url 'home' %}"><img src="{% static 'home/img-core/logo/logo_transparent.png' %}" alt="Culttravels" height="40"></a>
                     </h4>
                 </div>
                 <!-- Grid column -->
@@ -74,15 +74,15 @@
 
 
                     <div class="col-12">
-                        <div class="opening-hours__child mt-4">
+                        <div class="opening-hours__child mt-4 d-flex justify-content-around">
                             <span>{% translate "Mon-Fri"%}</span>
                             <span>9.00-18.00</span>
                         </div>
-                        <div class="opening-hours__child mt-3">
+                        <div class="opening-hours__child mt-3 d-flex justify-content-around">
                             <span>{% translate "Sat" %}</span>
                             <span>{% translate "Closed"%}</span>
                         </div>
-                        <div class="opening-hours__child mt-3">
+                        <div class="opening-hours__child mt-3 d-flex justify-content-around">
                             <span>{% translate "Sun" %}</span>
                             <span>{% translate "Closed"%}</span>
                         </div>

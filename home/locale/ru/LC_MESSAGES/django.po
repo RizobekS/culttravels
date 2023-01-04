@@ -215,7 +215,7 @@ msgstr "Откройте для себя мир, который вы ещё ни
 
 #: .\templates\home\home.html:105
 msgid "Explore With Culttravels"
-msgstr "Исследуйте с TravelCults"
+msgstr "Исследуйте с Culttravels"
 
 #: .\templates\home\home.html:110
 msgid "Weekend Trips"
