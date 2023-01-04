@@ -8,6 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Culttravels</title>
+    <meta property="og:title" content='{% spaceless %}{% block og_title %}Culttravels{% endblock og_title %}{% endspaceless %}'/>
+    <meta property="og:description" content='{% spaceless %}{% block description %}Culttravels{% endblock description %}{% endspaceless %}'/>
+    <meta property="og:image" content="http://{% spaceless %}{% block image %}www.culttravels.com{% static '/home/img-core/logo/logo-1.png' %}{% endblock image %}{% endspaceless %}">
+    <meta property="og:type" content="website"/>
+    <!-- Favicon -->
+    <link rel="icon" href="{% static '/home/img-core/logo/logo-icon.ico' %}">
+    <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{% static '/home/css/style.css' %}">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
