@@ -11,7 +11,6 @@ from paycomuz import Paycom
 from transaction.service import *
 
 
-
 def index(request):
     if request.LANGUAGE_CODE == 'en':
         tours_home = Tours.objects.filter(english=True).order_by('-pk')
@@ -177,7 +176,7 @@ def click_generate_url(request, amount, tour_id):
 
 
 def payme_generate_url(request, amount, tour_id):
-    price = amount * 100
+    price = amount * 1
     transaction_id = initalize_transaction_payme(
         request.user,
         price,
