@@ -187,7 +187,7 @@ def payme_generate_url(request, amount, tour_id):
     generated_link = Paycom().create_initialization(
         price,
         transaction_id,
-        return_url="http://127.0.0.1:8000/dashboard/"
+        return_url="http://www.culttravels.com/dashboard/"
     )
     return redirect(generated_link)
 
