@@ -176,7 +176,7 @@ def click_generate_url(request, amount, tour_id):
 
 
 def payme_generate_url(request, amount, tour_id):
-    price = amount * 1
+    price = amount * 100
     transaction_id = initalize_transaction_payme(
         request.user,
         price,
