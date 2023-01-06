@@ -24,7 +24,7 @@ class CheckPayMeTransaction(Paycom):
     def successfully_payment(self, account, transaction, *args, **kwargs):
         service.pay_transaction(transaction.order_key)
 
-        transaction = Transaction.objects.get(id=int(account))
+        transaction = Transaction.objects.get(id=int(transaction.order_key))
         transaction.make_payment()
         payment_type = transaction.transaction_type
         tour_id = transaction.tour.id
