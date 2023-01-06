@@ -177,7 +177,7 @@ def click_generate_url(request, amount, tour_id):
 
 
 def payme_generate_url(request, amount, tour_id):
-    exp = amount * 100
+    exp = amount * 10
     add = f'{exp}.000'
     price = Decimal(add)
 
