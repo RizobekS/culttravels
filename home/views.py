@@ -1,3 +1,4 @@
+from decimal import Decimal
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
@@ -176,7 +177,10 @@ def click_generate_url(request, amount, tour_id):
 
 
 def payme_generate_url(request, amount, tour_id):
-    price = float(amount) * 100
+    exp = amount * 100
+    add = f'{exp}.000'
+    price = Decimal(add)
+
     transaction_id = initalize_transaction_payme(
         request.user,
         price,
