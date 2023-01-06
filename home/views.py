@@ -179,13 +179,13 @@ def click_generate_url(request, amount, tour_id):
 def payme_generate_url(request):
     amount = request.GET.get('amount')
     tour_id = request.GET.get('tour_id')
-    price = amount * 100
-
+    res = float(amount) * float(100)
+    price = Decimal(str(res))
     print(price)
 
     transaction_id = initalize_transaction_payme(
         request.user,
-        price,
+        amount,
         tour_id
     )
 
