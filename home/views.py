@@ -176,10 +176,12 @@ def click_generate_url(request, amount, tour_id):
     return redirect(generated_link)
 
 
-def payme_generate_url(request, amount, tour_id):
-    exp = amount * 10
-    add = f'{exp}.000'
-    price = Decimal(add)
+def payme_generate_url(request):
+    amount = request.GET.get('amount')
+    tour_id = request.GET.get('tour_id')
+    price = amount * 100
+
+    print(price)
 
     transaction_id = initalize_transaction_payme(
         request.user,

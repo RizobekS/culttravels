@@ -76,7 +76,7 @@
                     <h5 style="text-align: center; color: black;">{% translate 'Select the payment type' %}</h5>
                     <br>
                     <a target="_blank" href="/click_generate_url/{{ detail.value|floatformat:0 }}/{{ detail.id }}"><img style="border: 1px solid darkgray; margin: 5px;" width="40%" src="{% static 'home/systems/click.png' %}" alt="click"></a>
-                    <a target="_blank" href="/payme_generate_url/{{ detail.value|floatformat:0 }}/{{ detail.id }}"><img style="border: 1px solid darkgray; margin: 5px;" width="42%" src="{% static 'home/systems/payme.png' %}" alt="payme"></a>
+                    <a target="_blank" href="/payme_generate_url/?amount={{ detail.value }}&tour_id={{ detail.id }}"><img style="border: 1px solid darkgray; margin: 5px;" width="42%" src="{% static 'home/systems/payme.png' %}" alt="payme"></a>
                 </div>
             </div>
         </div>
