@@ -65,17 +65,17 @@
                                                     <td>{{ rs.id }}</td>
                                                     <td class="instruct-orders-info">
                                                         {% if LANGUAGE_CODE == 'en' %}
-                                                        <p><a href="{% url 'mytour-detail' rs.id %}">{{ rs.title_en }}</a></p>
+                                                        <strong><a href="{% url 'mytour-detail' rs.id %}">{{ rs.title_en }}</a></strong>
                                                         {% elif LANGUAGE_CODE == 'ru'%}
-                                                        <p><a href="{% url 'mytour-detail' rs.id %}">{{ rs.title_ru }}</a></p>
+                                                        <strong><a href="{% url 'mytour-detail' rs.id %}">{{ rs.title_ru }}</a></strong>
                                                         {% elif LANGUAGE_CODE == 'uz' %}
-                                                        <p><a href="{% url 'mytour-detail' rs.id %}">{{ rs.title_uz }}</a></p>
+                                                        <strong><a href="{% url 'mytour-detail' rs.id %}">{{ rs.title_uz }}</a></strong>
                                                         {% endif %}
                                                     </td>
                                                     <td>{{ rs.value|floatformat:0|intcomma }} UZS</td>
                                                     <td>{{ rs.payment_time }}</td>
                                                     <td>{{ rs.payment_date }}</td>
-                                                    <td><span class="badge info-low">{% translate 'Paid' %}</span>
+                                                    <td><span>{% translate 'Paid' %} <i class="fas fa-check-circle me-2 text-success"></i></span>
                                                     </td>
                                                     <td><a href="{% url 'invoice' rs.id %}"><i
                                                             class="fa fa-eye"></i> {% translate 'View' %}</a></td>
