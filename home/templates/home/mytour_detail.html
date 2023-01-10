@@ -39,31 +39,23 @@
             <div class="row">
 
                 <div class="col-xl-3 col-lg-4 col-md-12 theiaStickySidebar">
-                    <div class="settings-widget dash-profile">
-                        <div class="settings-menu p-0">
-                            <div class="profile-bg">
-                                <h5>{% translate 'Customer' %}</h5>
-                                <img src="{% static 'dashboard/assets/img/instructor-profile-bg.jpg' %}" alt="">
-                                <div class="profile-img">
-                                    <a><img src="{% static 'dashboard/assets/img/user-img.png' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="profile-group">
-                                <div class="profile-name text-center">
-                                    <h4><a>{{ request.user.first_name }} {{ request.user.last_name }}</a></h4>
-                                    <p>{{ request.user.phone }}</p>
-                                </div>
-                            </div>
+                    <div class="card testimonial-card mt-2 mb-3">
+                        <div class="card-up aqua-gradient"></div>
+                        <div class="avatar mx-auto white">
+                            <img src="{% static 'dashboard/assets/img/user-img.png' %}"
+                                 class="rounded-circle img-fluid"
+                                 alt="user">
                         </div>
-                    </div>
-                    <div class="settings-widget account-settings">
-                        <div class="settings-menu">
-                            <h3>{% translate 'CONTROL PANEL' %}</h3>
-                            <ul>
-                                <li class="nav-item">
-                                    <a href="{% url 'dashboard' %}" class="nav-link">
-                                        <i class="feather-shopping-bag"></i> {% translate 'Payments' %}
-                                    </a>
+                        <div class="card-body text-center">
+                            <h4><a>{{ request.user.first_name }} {{ request.user.last_name }}</a></h4>
+                            <p>{{ request.user.phone }}</p>
+                            <hr>
+                            <h5>{% translate 'CONTROL PANEL' %}</h5>
+                            <ul class="list-group list-group-light">
+                                <li class="list-group-item px-3 border-0" aria-current="true">
+                                    <a href="{% url 'dashboard' %}"
+                                       class="nav-link" style="color: #65CCB8;">
+                                        <i class="fas fa-shopping-cart"></i> {% translate 'Payments' %}</a>
                                 </li>
                             </ul>
                         </div>
