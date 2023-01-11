@@ -33,7 +33,7 @@
              style="background-color: #65CCB8;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'home/img-core/logo/logo_transparent.png' %}" alt="Culttravels" height="40"></a>
-                <div class="collapse navbar-collapse justify-content-evenly" id="navbarNavAltMarkup">
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="quick-link" href="{% url 'tours' %}">{% translate "Tours" %}</a>
                         <a class="quick-link" href="{% url 'home' %}">{% translate "About us" %}</a>
@@ -59,13 +59,19 @@
                         </form>
                     </div>
                 </div>
-                <div class="text-center">
-                    {% if request.user.is_authenticated %}
-                        <a href="{% url 'dashboard' %}" style="color: white;" ><i style="color: white;" class="fa fa-user"></i> {{ user.first_name }}</a>
-                    {% else %}
-                    <a style="color: white;" href="{% url 'login' %}"><i style="color: white;" class="fa fa-user"></i> {% translate 'Login' %}</a>
-                    {% endif %}
+                {% if request.user.is_authenticated %}
+                <div class="dropdown">
+                      <a href="javascript:;" class="dropdown-toggle text-white" type="button" id="dropdownMenu2" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i style="color: white;" class="fa fa-user"></i>{{ user.first_name }}
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><a href="{% url 'dashboard' %}" class="dropdown-item text-capitalize" type="button">{% translate 'My Profile' %}</a></li>
+                        <li><a href="/logout-user/" class="dropdown-item text-capitalize" type="button">{% translate 'Logout' %}</a></li>
+                      </ul>
                 </div>
+                {% else %}
+                <a style="color: white;" href="{% url 'login' %}"><i style="color: white;" class="fa fa-user"></i> {% translate 'Login' %}</a>
+                    {% endif %}
                 <button
                         class="navbar-toggler"
                         type="button"
