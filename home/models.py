@@ -55,34 +55,6 @@ class User(AbstractUser):
         super().save(*args, **kwargs)
 
 
-class Contact(models.Model):
-    class Meta:
-        verbose_name = 'Contact'
-        verbose_name_plural = 'Contact'
-
-    name = models.CharField(max_length=255, blank=True, null=True)
-    email = models.EmailField(max_length=255, blank=True)
-    message = models.CharField(max_length=1000, blank=True)
-    received_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-
-    # for moderator
-    reply_subject = models.CharField(max_length=255, blank=True, null=True)
-    reply_message = models.CharField(max_length=1000, blank=True, null=True)
-    replied_date = models.DateTimeField(blank=True, null=True, editable=False)
-
-    def save(self, force_insert=False, force_update=False, using=None,
-             update_fields=None):
-        if self.reply_subject and self.reply_message:
-            self.replied_date = timezone.now()
-            send_mail(self.reply_subject, self.reply_message, EMAIL_HOST_USER, [self.email], fail_silently=False)
-            super(Contact, self).save()
-        else:
-            super(Contact, self).save()
-
-    def __str__(self):
-        return self.name
-
-
 class FAQ(models.Model):
     class Meta:
         verbose_name = 'FAQ'
@@ -176,33 +148,62 @@ class Tours(models.Model):
         return self.title_ru
 
 
-# class MyTours(models.Model):
-#     PAYMENT_STATUS = (
-#         ("new", "Yangi"),
-#         ("paid", "To'landi"),
-#         ("canceled", "Bekor qilindi")
-#     )
-#
-#     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-#     tour = models.ForeignKey(Tours, on_delete=models.SET_NULL, related_name='mytour', null=True)
-#
-#     payment_status = models.CharField(max_length=300, choices=PAYMENT_STATUS)
-#     price = models.CharField(max_length=300)
-#     payment_time = models.TimeField(auto_now_add=True)
-#     payment_date = models.DateField(auto_now_add=True)
-#
-#     def __str__(self):
-#         return self.tour.title_ru
-#
-#     def tour_id(self):
-#         return self.tour.id
-#
-#     def go_tour(self):
-#         return format_html(f"<a href='/admin/home/tours/{self.id}/change/'>VIEW TOUR</a>")
-#
-#     class Meta:
-#         verbose_name = 'My Tours'
-#         verbose_name_plural = 'My Tours'
+class Contact(models.Model):
+    class Meta:
+        verbose_name = 'Contact'
+        verbose_name_plural = 'Contact'
+
+    name = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(max_length=255, blank=True)
+    message = models.CharField(max_length=1000, blank=True)
+    received_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+
+    # for moderator
+    reply_subject = models.CharField(max_length=255, blank=True, null=True)
+    reply_message = models.CharField(max_length=1000, blank=True, null=True)
+    replied_date = models.DateTimeField(blank=True, null=True, editable=False)
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        if self.reply_subject and self.reply_message:
+            self.replied_date = timezone.now()
+            send_mail(self.reply_subject, self.reply_message, EMAIL_HOST_USER, [self.email], fail_silently=False)
+            super(Contact, self).save()
+        else:
+            super(Contact, self).save()
+
+    def __str__(self):
+        return self.name
+
+
+class Reservation(models.Model):
+    class Meta:
+        verbose_name = "Reservations"
+        verbose_name_plural = "Reservation"
+
+    tours = models.ForeignKey(Tours, null=True, on_delete=models.SET_NULL)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(max_length=255, blank=True)
+    message = models.CharField(max_length=1000, blank=True)
+    received_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+
+    # for moderator
+    reply_subject = models.CharField(max_length=255, blank=True, null=True)
+    reply_message = models.CharField(max_length=1000, blank=True, null=True)
+    replied_date = models.DateTimeField(blank=True, null=True, editable=False)
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        if self.reply_subject and self.reply_message:
+            self.replied_date = timezone.now()
+            send_mail(self.reply_subject, self.reply_message, EMAIL_HOST_USER, [self.email], fail_silently=False)
+            super(Reservation, self).save()
+        else:
+            super(Reservation, self).save()
+
+    def __str__(self):
+        return self.name
+
 
 class MyTours(models.Model):
     PAYMENT_STATUS = (

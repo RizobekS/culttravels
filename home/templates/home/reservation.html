@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Reservation"%}{% endblock title %}
+
+{% block content %}
+<div class="row-fluid mb-5">
+    <div class="bg-image"
+         style="background-image: url({% static 'home/img-core/bg-images/reserved.webp' %});
+                height: 500px; top: 1;">
+
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <p class="text-white mb-0 h1">{% translate 'Reservation' %}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<section class="container ">
+    <div class="container text-center">
+        {% if messages %}
+        <div class="row">
+            <div class="col-sm-12 col-sm-offset-3">
+                {% for message in messages %}
+                {% if name != "Ooops, something went wrong!" %}
+                <div class="alert alert-success alert-dismissible fade show d-flex justify-content-between"
+                     role="alert">
+                    <h6><strong>{{ name }}</strong>, {% trans "thank you very much for your message! We will contact you shortly!" %}</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% else %}
+                <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-between" role="alert">
+                    <h6><strong>{% trans "Ooops, something went wrong!"%}</strong></h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        <div class="col-12">
+            <div class="contact-form">
+                <!-- Section Heading -->
+                <div class="text-center">
+                    <h2>{% trans "Reservation Tours"%}</h2>
+                    <div class="line"></div>
+                </div>
+                <!-- Form -->
+                <form action="{% url 'reservation' %}" method="post">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-between">
+                        <div class="mb-3 col-6">
+                            <select name="village" id="select2Village" required class="form-control forselect">
+                                <option style="color:#ccc" value="" selected disabled hidden>{% trans "Select Tours"%}
+                                </option>
+                                {% for tour in tour_list %}
+                                <option value="{{ tour.pk }}">
+                                    {% if LANGUAGE_CODE == 'en' %}
+                                    {{ tour.title_en }}
+                                    {% elif LANGUAGE_CODE == 'ru'%}
+                                    {{ tour.title_ru }}
+                                    {% elif LANGUAGE_CODE == 'uz' %}
+                                    {{ tour.title_uz }}
+                                    {% endif %}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <!-- Name input -->
+                        <div class="form-outline mb-3 col-6">
+                            <input type="text" id="form4Example1" name="name" class="form-control" required/>
+                            <label class="form-label" for="form4Example1">{% trans 'Your Name' %}</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- Email input -->
+                        <div class="form-outline mb-3 col-6">
+                            <input type="email" id="form4Example2" name="email" class="form-control" required/>
+                            <label class="form-label" for="form4Example2">{% trans 'Your Email' %}</label>
+                        </div>
+                        <!-- Phone input -->
+                        <div class="form-outline mb-3 col-6">
+                            <input type="tel" id="form4Example3" name="phone" class="form-control"/>
+                            <label class="form-label" for="form4Example3">{% trans 'Your Phone' %}</label>
+                        </div>
+                    </div>
+                    <!-- Message input -->
+                    <div class="form-outline mb-3">
+                        <textarea class="form-control" id="form4Example4" name="message" rows="4" required></textarea>
+                        <label class="form-label" for="form4Example4">{% trans 'Your Message' %}</label>
+                    </div>
+                    <input type="text" name="address" style="display: none"><!--FOR CHECKING PURPOSES-->
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-block mb-3 bg-info text-white">{% trans "Send Message"%}
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

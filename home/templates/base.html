@@ -43,7 +43,7 @@
                     <div class="text-center col-sm-3 col-md-2 col-lg-2 col-3">
                         <form id="lang_changer" action="{% url 'set_language' %}" method="post">{% csrf_token %}
                             <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                            <select class="form-control form-control-sm text-center" name="language" id="language"
+                            <select class="form-control form-control-sm text-center select" name="language" id="language"
                                     onchange="this.form.submit();" required>
                                 {% get_current_language as LANGUAGE_CODE %}
                                 {% get_available_languages as LANGUAGES %}

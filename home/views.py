@@ -1,11 +1,12 @@
 from decimal import Decimal
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import *
 from django.utils.translation import gettext_lazy as _
-from .models import FAQ, Tours
+from .models import FAQ, Tours, Reservation
 from django.contrib.auth import login, authenticate, logout
 from clickuz import ClickUz
 from paycomuz import Paycom
@@ -77,6 +78,22 @@ def contact(request):
             return render(request, 'home/contact.html', {'name': name})
     else:
         return render(request, 'home/contact.html', {})
+
+
+def reservation(request):
+    tours_list = Tours.objects.all()
+    if request.method == "POST":
+        form = ReservationForm(request.POST)
+        if form.is_valid() and request.POST['address'] == "":
+            form.save()
+            name = request.POST['name']
+            messages.success(request, 'Success!')
+            return render(request, 'home/reservation.html', {'name': name, 'tour_list': tours_list})
+        else:
+            name = "Ooops, something went wrong!"
+            return render(request, 'home/reservation.html', {'name': name, 'tour_list': tours_list})
+    else:
+        return render(request, 'home/reservation.html', {'tour_list': tours_list})
 
 
 def faq(request):
@@ -159,6 +176,7 @@ def mytourdetail(request, id):
     return render(request, 'home/mytour_detail.html', context)
 
 
+@login_required(login_url='/login/')
 def click_generate_url(request, amount, tour_id):
     price = amount * 1
 
@@ -176,6 +194,7 @@ def click_generate_url(request, amount, tour_id):
     return redirect(generated_link)
 
 
+@login_required(login_url='/login/')
 def payme_generate_url(request):
     amount = request.GET.get('amount')
     tour_id = request.GET.get('tour_id')

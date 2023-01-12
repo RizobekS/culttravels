@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .models import CustomUserManager, User, Tours, MyTours, FAQ, Contact, Reservation
 
 
 class ToursAdmin(admin.ModelAdmin):
@@ -18,8 +18,15 @@ class ToursAdmin(admin.ModelAdmin):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'message', 'received_date', 'replied_date', 'reply_subject', 'reply_message']
+    list_display = ['name', 'email', 'message', 'received_date', 'replied_date', 'reply_subject',
+                    'reply_message']
     search_fields = ['name', 'email', 'message']
+
+
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ['tours', 'name', 'email', 'message', 'received_date', 'replied_date', 'reply_subject',
+                    'reply_message']
+    search_fields = ['tours__title_en', 'name', 'email', 'message']
 
 
 class FAQAdmin(admin.ModelAdmin):
@@ -27,10 +34,10 @@ class FAQAdmin(admin.ModelAdmin):
     search_fields = ['question_en', 'question_uz', 'question_ru']
 
 
-
 admin.site.site_header = "Culttravels"
 admin.site.register(MyTours)
 admin.site.register(User)
 admin.site.register(Tours, ToursAdmin)
 admin.site.register(Contact, ContactAdmin)
+admin.site.register(Reservation, ReservationAdmin)
 admin.site.register(FAQ, FAQAdmin)

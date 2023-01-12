@@ -139,6 +139,11 @@
                                 <a data-mdb-toggle="modal" data-mdb-target="#exampleModal" class="bg-info btn" id="order">{% translate 'Buy' %}</a>
                             </div>
                         </div>
+                        <div class="d-flex justify-content-center mt-3 mb-5">
+                            <div class="order col-6 col-md-4 col-lg-2">
+                                <a href="{% url 'reservation' %}" class="btn-outline-success btn text-black" id="order">{% translate 'Reservation' %}</a>
+                            </div>
+                        </div>
                         <div class="img_news text-center">
                             {% if LANGUAGE_CODE == 'en' %}
                                 {% if detail.extra_img_one %}
@@ -251,7 +256,11 @@
                             <a data-mdb-toggle="modal" data-mdb-target="#exampleModal" class="bg-info btn" id="order">{% translate 'Buy' %}</a>
                         </div>
                     </div>
-
+                    <div class="d-flex justify-content-center mt-3 mb-5">
+                            <div class="order col-6 col-md-4 col-lg-2">
+                                <a href="{% url 'reservation' %}" class="btn-outline-success btn text-black" id="order">{% translate 'Reservation' %}</a>
+                            </div>
+                        </div>
                     <!-- Post Share  -->
                     <div class="post-share-area mb-3 d-flex justify-content-evenly">
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"

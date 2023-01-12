@@ -12,6 +12,14 @@ class ContactForm(forms.ModelForm):
         ]
 
 
+class ReservationForm(forms.ModelForm):
+    class Meta:
+        model = Reservation
+        fields = [
+            'tours', 'name', 'email', 'message'
+        ]
+
+
 class NewUserForm(UserCreationForm):
     phone = forms.CharField(required=True)
 
