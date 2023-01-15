@@ -28,12 +28,12 @@
                 <div class="alert alert-success alert-dismissible fade show d-flex justify-content-between"
                      role="alert">
                     <h6><strong>{{ name }}</strong>, {% trans "thank you very much for your message! We will contact you shortly!" %}</h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-mdb-dismiss="alert" aria-label="Close"></button>
                 </div>
                 {% else %}
                 <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-between" role="alert">
                     <h6><strong>{% trans "Ooops, something went wrong!"%}</strong></h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-mdb-dismiss="alert" aria-label="Close"></button>
                 </div>
                 {% endif %}
                 {% endfor %}
