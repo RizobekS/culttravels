@@ -19,7 +19,7 @@ urlpatterns = [
     path('invoice/<int:id>/', views.invoice, name='invoice'),
     path('mytour-detail/<int:id>/', views.mytourdetail, name='mytour-detail'),
     path('click_generate_url/<int:amount>/<int:tour_id>/', views.click_generate_url, name='click_generate_url'),
-    path('payme_generate_url/<int:amount>/<int:tour_id>/', views.payme_generate_url, name='payme_generate_url'),
+    path('payme_generate_url/', views.payme_generate_url, name='payme_generate_url'),
     path('success_payment', views.payment_success, name='success_payment')
 ]
 
