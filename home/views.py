@@ -82,16 +82,15 @@ def contact(request):
 
 def reservation(request):
     tours_list = Tours.objects.all()
-    if request.method == "POST":
+    if request.method == "POST" and request.POST['email2'] == "":
         form = ReservationForm(request.POST)
-        if form.is_valid() and request.POST['address'] == "":
+        if form.is_valid():
             form.save()
             name = request.POST['name']
             messages.success(request, 'Success!')
-            return render(request, 'home/reservation.html', {'name': name, 'tour_list': tours_list})
         else:
             name = "Ooops, something went wrong!"
-            return render(request, 'home/reservation.html', {'name': name, 'tour_list': tours_list})
+        return render(request, 'home/reservation.html', {'name': name, 'tour_list': tours_list})
     else:
         return render(request, 'home/reservation.html', {'tour_list': tours_list})
 

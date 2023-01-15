@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 13:08+0500\n"
+"POT-Creation-Date: 2023-01-15 18:24+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,31 +20,41 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\templates\base.html:41 .\templates\components\_footer.html:55
-#: .\templates\components\dashboard_header.html:31
+#: .\templates\base.html:38 .\templates\components\_footer.html:55
+#: .\templates\components\dashboard_header.html:45
 #: .\templates\home\home.html:139 .\templates\home\tours.html:6
 #: .\templates\home\tours.html:17
 msgid "Tours"
 msgstr "Туры"
 
-#: .\templates\base.html:42 .\templates\components\_footer.html:58
-#: .\templates\components\dashboard_header.html:32
+#: .\templates\base.html:39 .\templates\components\_footer.html:58
+#: .\templates\components\dashboard_header.html:46
 msgid "About us"
 msgstr "О нас"
 
-#: .\templates\base.html:43 .\templates\components\_footer.html:61
+#: .\templates\base.html:40 .\templates\components\_footer.html:61
 #: .\templates\components\_footer.html:97
-#: .\templates\components\dashboard_header.html:33
-#: .\templates\home\contact.html:4 .\templates\home\contact.html:24
+#: .\templates\components\dashboard_header.html:47
+#: .\templates\home\contact.html:4 .\templates\home\contact.html:25
 msgid "Contacts"
 msgstr "Контакты"
 
-#: .\templates\base.html:44 .\templates\components\_footer.html:64
-#: .\templates\home\faq.html:5 .\templates\home\faq.html:16
+#: .\templates\base.html:41 .\templates\components\_footer.html:64
+#: .\templates\components\dashboard_header.html:48 .\templates\home\faq.html:5
+#: .\templates\home\faq.html:16
 msgid "FAQ"
 msgstr "Часто задаваемые вопросы"
 
-#: .\templates\base.html:69 .\templates\registration\login.html:9
+#: .\templates\base.html:68 .\templates\components\dashboard_header.html:75
+msgid "My Profile"
+msgstr "Мой Профиль"
+
+#: .\templates\base.html:69 .\templates\components\dashboard_header.html:76
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\templates\base.html:73 .\templates\components\dashboard_header.html:80
+#: .\templates\registration\login.html:9
 #: .\templates\registration\login.html:106
 #: .\templates\registration\login.html:118
 #: .\templates\registration\register.html:134
@@ -80,118 +90,101 @@ msgstr "Закрыто"
 msgid "Sun"
 msgstr "Вс"
 
-#: .\templates\components\_footer.html:101 .\templates\home\contact.html:58
+#: .\templates\components\_footer.html:101 .\templates\home\contact.html:101
 msgid "4 Chilanzar Ave, Tashkent 100115"
 msgstr "4 улица Чиланзар, Ташкент 100115"
 
-#: .\templates\components\dashboard_header.html:30
-msgid "Home"
-msgstr "Главный"
-
-#: .\templates\components\dashboard_header.html:68
-#: .\templates\home\dashboard.html:12
-msgid "My Profile"
-msgstr "Мой Профиль"
-
-#: .\templates\components\dashboard_header.html:70
-msgid "Logout"
-msgstr "Выйти"
-
-#: .\templates\home\contact.html:39
+#: .\templates\home\contact.html:41 .\templates\home\reservation.html:30
 msgid "thank you very much for your message! We will contact you shortly!"
 msgstr " большое спасибо за ваше сообщение! Мы скоро с Вами свяжемся!"
 
-#: .\templates\home\contact.html:44
+#: .\templates\home\contact.html:46 .\templates\home\reservation.html:35
 msgid "Ooops, something went wrong!"
 msgstr "Упс, что-то пошло не так!"
 
-#: .\templates\home\contact.html:57
+#: .\templates\home\contact.html:56
+msgid "Get In Touch"
+msgstr "Связаться"
+
+#: .\templates\home\contact.html:69 .\templates\home\reservation.html:74
+msgid "Your Name"
+msgstr "Имя"
+
+#: .\templates\home\contact.html:75 .\templates\home\reservation.html:81
+msgid "Your Email"
+msgstr "Электронная почта"
+
+#: .\templates\home\contact.html:80 .\templates\home\reservation.html:86
+msgid "Your Phone"
+msgstr "Телефон"
+
+#: .\templates\home\contact.html:87 .\templates\home\reservation.html:92
+msgid "Your Message"
+msgstr "Сообщение"
+
+#: .\templates\home\contact.html:91 .\templates\home\reservation.html:96
+msgid "Send Message"
+msgstr "Отправить"
+
+#: .\templates\home\contact.html:100
 msgid "Address"
 msgstr "Адрес"
 
-#: .\templates\home\contact.html:60
+#: .\templates\home\contact.html:103
 msgid "Phone"
 msgstr "Телефон"
 
-#: .\templates\home\contact.html:64 .\templates\registration\register.html:123
+#: .\templates\home\contact.html:107 .\templates\registration\register.html:123
 #: .\templates\registration\register.html:124
 msgid "Email"
 msgstr "Адрес электронной почты"
 
-#: .\templates\home\contact.html:74
-msgid "Get In Touch"
-msgstr "Связаться"
-
-#: .\templates\home\contact.html:83
-msgid "Your Name"
-msgstr "Имя"
-
-#: .\templates\home\contact.html:89
-msgid "Your Email"
-msgstr "Электронная почта"
-
-#: .\templates\home\contact.html:94
-msgid "Your Phone"
-msgstr "Телефон"
-
-#: .\templates\home\contact.html:100
-msgid "Your Message"
-msgstr "Сообщение"
-
-#: .\templates\home\contact.html:104
-msgid "Send Message"
-msgstr "Отправить"
-
-#: .\templates\home\dashboard.html:62 .\templates\home\mytour_detail.html:61
-msgid "Customer"
-msgstr "Клиент"
-
-#: .\templates\home\dashboard.html:78 .\templates\home\mytour_detail.html:77
+#: .\templates\home\dashboard.html:24 .\templates\home\mytour_detail.html:53
 msgid "CONTROL PANEL"
 msgstr "ПАНЕЛЬ УПРАВЛЕНИЯ"
 
-#: .\templates\home\dashboard.html:82 .\templates\home\dashboard.html:97
-#: .\templates\home\mytour_detail.html:81
+#: .\templates\home\dashboard.html:29 .\templates\home\dashboard.html:43
+#: .\templates\home\mytour_detail.html:58
 msgid "Payments"
 msgstr "Платежи"
 
-#: .\templates\home\dashboard.html:98
+#: .\templates\home\dashboard.html:44
 msgid "Paid Tours"
 msgstr "Оплачиваемые поездки"
 
-#: .\templates\home\dashboard.html:108
+#: .\templates\home\dashboard.html:54
 msgid "Tour"
 msgstr "Туры"
 
-#: .\templates\home\dashboard.html:109
+#: .\templates\home\dashboard.html:55
 msgid "Amount"
 msgstr "Количество"
 
-#: .\templates\home\dashboard.html:110
+#: .\templates\home\dashboard.html:56
 msgid "Time"
 msgstr "Время"
 
-#: .\templates\home\dashboard.html:111 .\templates\home\invoice_detail.html:70
+#: .\templates\home\dashboard.html:57 .\templates\home\invoice_detail.html:70
 msgid "Date"
 msgstr "Дата"
 
-#: .\templates\home\dashboard.html:112 .\templates\home\invoice_detail.html:132
+#: .\templates\home\dashboard.html:58 .\templates\home\invoice_detail.html:132
 msgid "Status"
 msgstr "Статус"
 
-#: .\templates\home\dashboard.html:113
+#: .\templates\home\dashboard.html:59
 msgid "Action"
 msgstr "Действие"
 
-#: .\templates\home\dashboard.html:132 .\templates\home\invoice_detail.html:150
+#: .\templates\home\dashboard.html:78 .\templates\home\invoice_detail.html:150
 msgid "Paid"
 msgstr "Оплачено"
 
-#: .\templates\home\dashboard.html:135
+#: .\templates\home\dashboard.html:81
 msgid "View"
 msgstr "Действие"
 
-#: .\templates\home\dashboard.html:141
+#: .\templates\home\dashboard.html:87
 msgid "There are no fees!"
 msgstr "Сборов нет!"
 
@@ -277,9 +270,19 @@ msgstr "Заголовок"
 msgid "Price"
 msgstr "Цена"
 
-#: .\templates\home\mytour_detail.html:11
-msgid "My Tour"
-msgstr "Мой тур"
+#: .\templates\home\reservation.html:5 .\templates\home\reservation.html:15
+#: .\templates\home\tours_details.html:144
+#: .\templates\home\tours_details.html:261
+msgid "Reservation"
+msgstr "Бронирование"
+
+#: .\templates\home\reservation.html:47
+msgid "Reservation Tours"
+msgstr "Бронирование туров"
+
+#: .\templates\home\reservation.html:56
+msgid "Select Tours"
+msgstr "Выберите туры"
 
 #: .\templates\home\tours_details.html:72
 msgid "Payment"
@@ -290,16 +293,16 @@ msgid "Select the payment type"
 msgstr "Выберите тип оплаты"
 
 #: .\templates\home\tours_details.html:139
-#: .\templates\home\tours_details.html:251
+#: .\templates\home\tours_details.html:256
 msgid "Buy"
 msgstr "Купить"
 
-#: .\templates\home\tours_details.html:259
-#: .\templates\home\tours_details.html:264
+#: .\templates\home\tours_details.html:268
+#: .\templates\home\tours_details.html:273
 msgid "Share"
 msgstr "Поделиться"
 
-#: .\templates\home\tours_details.html:261
+#: .\templates\home\tours_details.html:270
 msgid "Send"
 msgstr "Отправить"
 
@@ -354,11 +357,21 @@ msgstr "Вернуть пароль"
 msgid "Do you have an account?"
 msgstr "У вас есть аккаунт?"
 
-#: .\views.py:96 .\views.py:123
+#: .\views.py:113 .\views.py:140
 msgid "Username or password is incorrect!"
 msgstr "Логин или пароль неверный!"
 
-#: .\views.py:119
+#: .\views.py:136
 msgid ""
 "Successfully registered! Enter your registered phone number and password!"
-msgstr "Успешно зарегистрирован! Введите зарегистрированный номер телефона и пароль!"
+msgstr ""
+"Успешно зарегистрирован! Введите зарегистрированный номер телефона и пароль!"
+
+#~ msgid "Home"
+#~ msgstr "Главный"
+
+#~ msgid "Customer"
+#~ msgstr "Клиент"
+
+#~ msgid "My Tour"
+#~ msgstr "Мой тур"

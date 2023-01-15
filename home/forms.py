@@ -16,7 +16,7 @@ class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
         fields = [
-            'tours', 'name', 'email', 'message'
+            'tours', 'name', 'email', 'phone', 'message'
         ]
 
 

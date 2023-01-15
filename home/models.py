@@ -184,6 +184,7 @@ class Reservation(models.Model):
     tours = models.ForeignKey(Tours, null=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=255, blank=True, null=True)
     email = models.EmailField(max_length=255, blank=True)
+    phone = models.CharField(max_length=13, null=True, blank=True)
     message = models.CharField(max_length=1000, blank=True)
     received_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
