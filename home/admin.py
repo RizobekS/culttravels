@@ -26,7 +26,7 @@ class ContactAdmin(admin.ModelAdmin):
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ['tours', 'name', 'email', 'phone', 'message', 'received_date', 'replied_date', 'reply_subject',
                     'reply_message']
-    search_fields = ['tours__title_en', 'name', 'email', 'phone', 'message']
+    search_fields = ['tours__title_en', 'tours__title_ru', 'name', 'email', 'phone', 'message']
 
 
 class FAQAdmin(admin.ModelAdmin):
