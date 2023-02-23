@@ -197,7 +197,7 @@
                             {{ detail.video_title_uz|default_if_none:"" }}
                         {% endif %}
                     </h2>
-                    <div class="video_news text-center rounded text-center">
+                    <div class="video_news text-center rounded">
                         {% if detail.video and LANGUAGE_CODE == 'en' %}
                             <video onclick="play(event)" src="{{ detail.video.url }}" id="video"
                                    width="100%" height="600px"
