@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-23 12:41+0500\n"
+"POT-Creation-Date: 2023-02-23 16:35+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,51 +20,59 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\home\templates\base.html:12
+#: .\home\templates\base.html:10 .\home\templates\base.html:15
+#: .\home\templates\components\dashboard_header.html:12
+#: .\home\templates\home\invoice_detail.html:12
+#: .\home\templates\registration\login.html:11
+#: .\home\templates\registration\register.html:10
 msgid "Tour agency"
 msgstr "Тур агентство"
 
-#: .\home\templates\base.html:47 .\home\templates\components\_footer.html:55
-#: .\home\templates\components\dashboard_header.html:45
+#: .\home\templates\base.html:10 .\home\templates\base.html:12
+msgid "buy or booking tours online"
+msgstr "Купить или забронировать туры онлайн"
+
+#: .\home\templates\base.html:50 .\home\templates\components\_footer.html:55
+#: .\home\templates\components\dashboard_header.html:50
 #: .\home\templates\home\home.html:139 .\home\templates\home\tours.html:6
 #: .\home\templates\home\tours.html:17
 msgid "Tours"
 msgstr "Туры"
 
-#: .\home\templates\base.html:48 .\home\templates\components\_footer.html:58
-#: .\home\templates\components\dashboard_header.html:46
+#: .\home\templates\base.html:51 .\home\templates\components\_footer.html:58
+#: .\home\templates\components\dashboard_header.html:51
 msgid "About us"
 msgstr "О нас"
 
-#: .\home\templates\base.html:49 .\home\templates\components\_footer.html:61
+#: .\home\templates\base.html:52 .\home\templates\components\_footer.html:61
 #: .\home\templates\components\_footer.html:97
-#: .\home\templates\components\dashboard_header.html:47
+#: .\home\templates\components\dashboard_header.html:52
 #: .\home\templates\home\contact.html:4 .\home\templates\home\contact.html:25
 msgid "Contacts"
 msgstr "Контакты"
 
-#: .\home\templates\base.html:50 .\home\templates\components\_footer.html:64
-#: .\home\templates\components\dashboard_header.html:48
+#: .\home\templates\base.html:53 .\home\templates\components\_footer.html:64
+#: .\home\templates\components\dashboard_header.html:53
 #: .\home\templates\home\faq.html:5 .\home\templates\home\faq.html:16
 msgid "FAQ"
 msgstr "Часто задаваемые вопросы"
 
-#: .\home\templates\base.html:77
-#: .\home\templates\components\dashboard_header.html:75
+#: .\home\templates\base.html:80
+#: .\home\templates\components\dashboard_header.html:80
 msgid "My Profile"
 msgstr "Мой Профиль"
 
-#: .\home\templates\base.html:78
-#: .\home\templates\components\dashboard_header.html:76
+#: .\home\templates\base.html:81
+#: .\home\templates\components\dashboard_header.html:81
 msgid "Logout"
 msgstr "Выйти"
 
-#: .\home\templates\base.html:82
-#: .\home\templates\components\dashboard_header.html:80
+#: .\home\templates\base.html:85
+#: .\home\templates\components\dashboard_header.html:85
 #: .\home\templates\registration\login.html:9
-#: .\home\templates\registration\login.html:106
 #: .\home\templates\registration\login.html:118
-#: .\home\templates\registration\register.html:134
+#: .\home\templates\registration\login.html:130
+#: .\home\templates\registration\register.html:146
 msgid "Login"
 msgstr "Вход"
 
@@ -150,8 +158,8 @@ msgid "Phone"
 msgstr "Телефон"
 
 #: .\home\templates\home\contact.html:107
-#: .\home\templates\registration\register.html:123
-#: .\home\templates\registration\register.html:124
+#: .\home\templates\registration\register.html:135
+#: .\home\templates\registration\register.html:136
 msgid "Email"
 msgstr "Адрес электронной почты"
 
@@ -183,12 +191,12 @@ msgid "Time"
 msgstr "Время"
 
 #: .\home\templates\home\dashboard.html:57
-#: .\home\templates\home\invoice_detail.html:70
+#: .\home\templates\home\invoice_detail.html:82
 msgid "Date"
 msgstr "Дата"
 
 #: .\home\templates\home\dashboard.html:58
-#: .\home\templates\home\invoice_detail.html:132
+#: .\home\templates\home\invoice_detail.html:144
 msgid "Status"
 msgstr "Статус"
 
@@ -197,7 +205,7 @@ msgid "Action"
 msgstr "Действие"
 
 #: .\home\templates\home\dashboard.html:78
-#: .\home\templates\home\invoice_detail.html:150
+#: .\home\templates\home\invoice_detail.html:162
 msgid "Paid"
 msgstr "Оплачено"
 
@@ -267,27 +275,27 @@ msgstr "Эксперт по путешествиям"
 msgid "All tours"
 msgstr "Все туры"
 
-#: .\home\templates\home\invoice_detail.html:69
+#: .\home\templates\home\invoice_detail.html:81
 msgid "Invoice"
 msgstr "Инвойс"
 
-#: .\home\templates\home\invoice_detail.html:80
+#: .\home\templates\home\invoice_detail.html:92
 msgid "From"
 msgstr "От"
 
-#: .\home\templates\home\invoice_detail.html:90
+#: .\home\templates\home\invoice_detail.html:102
 msgid "To"
 msgstr "Кому"
 
-#: .\home\templates\home\invoice_detail.html:106
+#: .\home\templates\home\invoice_detail.html:118
 msgid "Payment type"
 msgstr "Способ оплаты"
 
-#: .\home\templates\home\invoice_detail.html:130
+#: .\home\templates\home\invoice_detail.html:142
 msgid "Title"
 msgstr "Заголовок"
 
-#: .\home\templates\home\invoice_detail.html:131
+#: .\home\templates\home\invoice_detail.html:143
 msgid "Price"
 msgstr "Цена"
 
@@ -328,54 +336,54 @@ msgstr "Поделиться"
 msgid "Send"
 msgstr "Отправить"
 
-#: .\home\templates\registration\login.html:110
-#: .\home\templates\registration\register.html:119
+#: .\home\templates\registration\login.html:122
+#: .\home\templates\registration\register.html:131
 msgid "Phone number"
 msgstr "Телефон номер"
 
-#: .\home\templates\registration\login.html:114
-#: .\home\templates\registration\login.html:115
+#: .\home\templates\registration\login.html:126
+#: .\home\templates\registration\login.html:127
 msgid "Password"
 msgstr "Пароль"
 
-#: .\home\templates\registration\login.html:117
+#: .\home\templates\registration\login.html:129
 msgid "Don`t have an account?"
 msgstr "Нет аккаунта?"
 
-#: .\home\templates\registration\login.html:117
-#: .\home\templates\registration\register.html:9
-#: .\home\templates\registration\register.html:106
-#: .\home\templates\registration\register.html:135
+#: .\home\templates\registration\login.html:129
+#: .\home\templates\registration\register.html:21
+#: .\home\templates\registration\register.html:118
+#: .\home\templates\registration\register.html:147
 msgid "Register"
 msgstr "Регистрация"
 
-#: .\home\templates\registration\register.html:111
+#: .\home\templates\registration\register.html:123
 msgid "First name"
 msgstr "Имя"
 
-#: .\home\templates\registration\register.html:112
+#: .\home\templates\registration\register.html:124
 msgid "Your first name"
 msgstr "Ваше имя"
 
-#: .\home\templates\registration\register.html:115
+#: .\home\templates\registration\register.html:127
 msgid "Last name"
 msgstr "Фамилия"
 
-#: .\home\templates\registration\register.html:116
+#: .\home\templates\registration\register.html:128
 msgid "Your last name"
 msgstr "Ваше фамилия"
 
-#: .\home\templates\registration\register.html:127
-#: .\home\templates\registration\register.html:128
+#: .\home\templates\registration\register.html:139
+#: .\home\templates\registration\register.html:140
 msgid "New Password"
 msgstr "Новый пароль"
 
-#: .\home\templates\registration\register.html:131
-#: .\home\templates\registration\register.html:132
+#: .\home\templates\registration\register.html:143
+#: .\home\templates\registration\register.html:144
 msgid "Return Password"
 msgstr "Вернуть пароль"
 
-#: .\home\templates\registration\register.html:134
+#: .\home\templates\registration\register.html:146
 msgid "Do you have an account?"
 msgstr "У вас есть аккаунт?"
 
