@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.core.validators import FileExtensionValidator, MinValueValidator, MaxValueValidator
 from django.db import models
 from django.db.models import FileField
+from django.urls import reverse
 from django.utils import timezone
 from django_resized import ResizedImageField
 from django.utils.html import format_html
@@ -146,6 +147,9 @@ class Tours(models.Model):
 
     def __str__(self):
         return self.title_ru
+
+    def get_absolute_url(self):
+        return reverse('tours_details', args=[str(self.pk)])
 
 
 class Contact(models.Model):

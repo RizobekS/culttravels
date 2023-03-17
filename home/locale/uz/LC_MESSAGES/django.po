@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-23 16:35+0500\n"
+"POT-Creation-Date: 2023-03-11 18:15+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,8 +21,8 @@ msgstr ""
 #: .\home\templates\base.html:10 .\home\templates\base.html:15
 #: .\home\templates\components\dashboard_header.html:12
 #: .\home\templates\home\invoice_detail.html:12
-#: .\home\templates\registration\login.html:11
-#: .\home\templates\registration\register.html:10
+#: .\home\templates\registration\login.html:12
+#: .\home\templates\registration\register.html:11
 msgid "Tour agency"
 msgstr "Sayohat agentligi"
 
@@ -43,7 +43,7 @@ msgid "About us"
 msgstr "Biz haqimizda"
 
 #: .\home\templates\base.html:52 .\home\templates\components\_footer.html:61
-#: .\home\templates\components\_footer.html:97
+#: .\home\templates\components\_footer.html:93
 #: .\home\templates\components\dashboard_header.html:52
 #: .\home\templates\home\contact.html:4 .\home\templates\home\contact.html:25
 msgid "Contacts"
@@ -67,10 +67,10 @@ msgstr "Chiqish"
 
 #: .\home\templates\base.html:85
 #: .\home\templates\components\dashboard_header.html:85
-#: .\home\templates\registration\login.html:9
-#: .\home\templates\registration\login.html:118
-#: .\home\templates\registration\login.html:130
-#: .\home\templates\registration\register.html:146
+#: .\home\templates\registration\login.html:10
+#: .\home\templates\registration\login.html:119
+#: .\home\templates\registration\login.html:131
+#: .\home\templates\registration\register.html:147
 msgid "Login"
 msgstr "Kirish"
 
@@ -87,23 +87,18 @@ msgid "Opening hours"
 msgstr "Ish vaqtlari"
 
 #: .\home\templates\components\_footer.html:78
-msgid "Mon-Fri"
-msgstr "Dushanba-Juma"
+msgid "Mon-Sat"
+msgstr "Dushanba-Shanba"
 
 #: .\home\templates\components\_footer.html:82
-msgid "Sat"
-msgstr "Shanba"
-
-#: .\home\templates\components\_footer.html:83
-#: .\home\templates\components\_footer.html:87
-msgid "Closed"
-msgstr "Yopiq"
-
-#: .\home\templates\components\_footer.html:86
 msgid "Sun"
 msgstr "Yakshanba"
 
-#: .\home\templates\components\_footer.html:101
+#: .\home\templates\components\_footer.html:83
+msgid "Closed"
+msgstr "Yopiq"
+
+#: .\home\templates\components\_footer.html:97
 #: .\home\templates\home\contact.html:101
 msgid "4 Chilanzar Ave, Tashkent 100115"
 msgstr "4 Chilinzor ko'chasi, Toshkent 100115"
@@ -156,8 +151,8 @@ msgid "Phone"
 msgstr "Telefon"
 
 #: .\home\templates\home\contact.html:107
-#: .\home\templates\registration\register.html:135
 #: .\home\templates\registration\register.html:136
+#: .\home\templates\registration\register.html:137
 msgid "Email"
 msgstr "Elektron pochta"
 
@@ -334,54 +329,54 @@ msgstr "Ulashish"
 msgid "Send"
 msgstr "Yuborish"
 
-#: .\home\templates\registration\login.html:122
-#: .\home\templates\registration\register.html:131
+#: .\home\templates\registration\login.html:123
+#: .\home\templates\registration\register.html:132
 msgid "Phone number"
 msgstr "Telefon raqam"
 
-#: .\home\templates\registration\login.html:126
 #: .\home\templates\registration\login.html:127
+#: .\home\templates\registration\login.html:128
 msgid "Password"
 msgstr "Parol"
 
-#: .\home\templates\registration\login.html:129
+#: .\home\templates\registration\login.html:130
 msgid "Don`t have an account?"
 msgstr "Hisobingiz yo'qmi?"
 
-#: .\home\templates\registration\login.html:129
-#: .\home\templates\registration\register.html:21
-#: .\home\templates\registration\register.html:118
-#: .\home\templates\registration\register.html:147
+#: .\home\templates\registration\login.html:130
+#: .\home\templates\registration\register.html:22
+#: .\home\templates\registration\register.html:119
+#: .\home\templates\registration\register.html:148
 msgid "Register"
 msgstr "Ro'yxatdan o'tish"
 
-#: .\home\templates\registration\register.html:123
+#: .\home\templates\registration\register.html:124
 msgid "First name"
 msgstr "Ism"
 
-#: .\home\templates\registration\register.html:124
+#: .\home\templates\registration\register.html:125
 msgid "Your first name"
 msgstr "Ismingiz"
 
-#: .\home\templates\registration\register.html:127
+#: .\home\templates\registration\register.html:128
 msgid "Last name"
 msgstr "Familiya"
 
-#: .\home\templates\registration\register.html:128
+#: .\home\templates\registration\register.html:129
 msgid "Your last name"
 msgstr "Familiyangiz"
 
-#: .\home\templates\registration\register.html:139
 #: .\home\templates\registration\register.html:140
+#: .\home\templates\registration\register.html:141
 msgid "New Password"
 msgstr "Yangi parol"
 
-#: .\home\templates\registration\register.html:143
 #: .\home\templates\registration\register.html:144
+#: .\home\templates\registration\register.html:145
 msgid "Return Password"
 msgstr "Parolni takrorlang"
 
-#: .\home\templates\registration\register.html:146
+#: .\home\templates\registration\register.html:147
 msgid "Do you have an account?"
 msgstr "Sizda akkauntingiz bormi?"
 
@@ -395,6 +390,12 @@ msgid ""
 msgstr ""
 "Muvaffaqiyatli ro'yxatga olindi! Roʻyxatdan oʻtgan telefon raqamingiz va "
 "parolingizni kiriting!"
+
+#~ msgid "Mon-Fri"
+#~ msgstr "Dushanba-Juma"
+
+#~ msgid "Sat"
+#~ msgstr "Shanba"
 
 #~ msgid "Home"
 #~ msgstr "Asosiy"

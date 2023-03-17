@@ -1,12 +1,22 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
+from home.sitemaps import StaticViewSitemap, ToursSitemap
+
+from home.models import FAQ, Tours, Contact, Reservation, MyTours
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'tours': ToursSitemap
+}
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('api/transaction/', include("transaction.urls")),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 ]
 
 urlpatterns += i18n_patterns(
