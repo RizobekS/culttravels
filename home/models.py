@@ -146,7 +146,7 @@ class Tours(models.Model):
     uzbek = models.BooleanField(blank=True, default=1)
 
     def __str__(self):
-        return self.title_ru
+        return self.title_uz
 
     def get_absolute_url(self):
         return reverse('tours_details', args=[str(self.pk)])
