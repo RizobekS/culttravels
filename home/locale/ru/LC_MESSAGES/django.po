@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-11 18:15+0500\n"
+"POT-Creation-Date: 2024-02-19 15:06+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,42 +32,42 @@ msgstr "Тур агентство"
 msgid "buy or booking tours online"
 msgstr "Купить или забронировать туры онлайн"
 
-#: .\home\templates\base.html:50 .\home\templates\components\_footer.html:55
+#: .\home\templates\base.html:59 .\home\templates\components\_footer.html:52
 #: .\home\templates\components\dashboard_header.html:50
 #: .\home\templates\home\home.html:139 .\home\templates\home\tours.html:6
 #: .\home\templates\home\tours.html:17
 msgid "Tours"
 msgstr "Туры"
 
-#: .\home\templates\base.html:51 .\home\templates\components\_footer.html:58
+#: .\home\templates\base.html:60 .\home\templates\components\_footer.html:55
 #: .\home\templates\components\dashboard_header.html:51
 msgid "About us"
 msgstr "О нас"
 
-#: .\home\templates\base.html:52 .\home\templates\components\_footer.html:61
+#: .\home\templates\base.html:61 .\home\templates\components\_footer.html:58
 #: .\home\templates\components\_footer.html:93
 #: .\home\templates\components\dashboard_header.html:52
 #: .\home\templates\home\contact.html:4 .\home\templates\home\contact.html:25
 msgid "Contacts"
 msgstr "Контакты"
 
-#: .\home\templates\base.html:53 .\home\templates\components\_footer.html:64
+#: .\home\templates\base.html:62 .\home\templates\components\_footer.html:61
 #: .\home\templates\components\dashboard_header.html:53
 #: .\home\templates\home\faq.html:5 .\home\templates\home\faq.html:16
 msgid "FAQ"
 msgstr "Часто задаваемые вопросы"
 
-#: .\home\templates\base.html:80
+#: .\home\templates\base.html:89
 #: .\home\templates\components\dashboard_header.html:80
 msgid "My Profile"
 msgstr "Мой Профиль"
 
-#: .\home\templates\base.html:81
+#: .\home\templates\base.html:90
 #: .\home\templates\components\dashboard_header.html:81
 msgid "Logout"
 msgstr "Выйти"
 
-#: .\home\templates\base.html:85
+#: .\home\templates\base.html:94
 #: .\home\templates\components\dashboard_header.html:85
 #: .\home\templates\registration\login.html:10
 #: .\home\templates\registration\login.html:119
@@ -80,9 +80,13 @@ msgstr "Вход"
 msgid "Join us in social networks:"
 msgstr "Присоединяйтесь к нам в социальных сетях:"
 
-#: .\home\templates\components\_footer.html:52
+#: .\home\templates\components\_footer.html:49
 msgid "Links"
 msgstr "Ссылки"
+
+#: .\home\templates\components\_footer.html:64
+msgid "Privacy Policy"
+msgstr "Политика конфиденциальности"
 
 #: .\home\templates\components\_footer.html:72
 msgid "Opening hours"
